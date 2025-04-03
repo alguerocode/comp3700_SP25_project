@@ -42,5 +42,8 @@ make sure you use all types of control forms with all different forms
 
 
 notice
+ - every one should use their branch (switch to by github desktop)
+ - write good commit massages evertime you change the code
 
 rules
+- pls all work no sleep, I know you have assemply , it's easy
