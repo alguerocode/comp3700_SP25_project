@@ -47,3 +47,11 @@ notice
 
 rules
 - pls all work no sleep, I know you have assemply , it's easy
+
+
+# colors
+
+purple: #6518ff
+yellow: #ffc72c
+black: #1d1b23
+hajzi eggwhite: #f3f1f8
