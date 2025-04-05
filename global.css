@@ -75,9 +75,10 @@ body {
 .footer {
     /* border-top: 1px solid gray; */
     width: 100%;
-    /* height: 100px; */
+    height: 100%;
+    max-height: 300px;
     background-color: #f3f1f8;
-    position: absolute;
+    /* position: absolute; */
     margin: 0;
     padding: 20px;
     bottom: 0;
