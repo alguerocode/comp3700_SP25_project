@@ -46,3 +46,23 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+*:hover {
+    background-color: #ffc72c ;
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+:active {
+    background-color: #ffc72c;
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+button:hover {
+    background-color: #ffc72c;
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+button:active {
+    background-color: #ffc72c;
+    transform: translateY(4px);
+}
