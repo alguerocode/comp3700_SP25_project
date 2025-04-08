@@ -50,8 +50,18 @@ rules
 
 
 # colors
-
 purple: #6518ff
 yellow: #ffc72c
 black: #1d1b23
 hajzi eggwhite: #f3f1f8
+
+
+# rules
+## nav and footer components
+- the nav and footer components you will find it in index.html <nav/> and <footer/> copy to your page
+- alway add the global.css style to your page 
+```
+<link rel="stylesheet" href="./global.css">
+```
+
+- name you style with 'html_filename.css' 
