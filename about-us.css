@@ -1,0 +1,19 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.details {
+    border-collapse: collapse;
+
+}
+
+tr td {
+    text-align: start;
+    padding: 20px;
+}
+
+

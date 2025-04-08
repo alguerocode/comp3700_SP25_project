@@ -5,12 +5,11 @@ body {
 }
 #container {
 
-    position: relative;
+    position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
-    /* margin-top: 10%; */
-    margin-bottom: 100px;
+    margin-top: 10%;
     text-align: center;
     width: 300px;
     
