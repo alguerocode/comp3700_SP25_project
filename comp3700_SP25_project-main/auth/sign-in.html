@@ -4,10 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/sign.css">
     <link rel="stylesheet" href="/global.css">
-    
+    <link rel="stylesheet" href="./global.css">
     <title>Document</title>
 </head>
-
 
 
 
@@ -16,24 +15,35 @@
     <div id="container" >
     <form method="post"   action="https://httpbin.org/get">
 
-        <p><img src="/public/logo.jpg" width="100" ></p>
+        <p><img src="../public/logo.png" width="100" height="100" ></p>
         
         
         <p><input type="text" name="username"  id="boxes" placeholder="Username" required>        </p>
         <p><input type="password" name="password"  id="boxes" placeholder="Password" required>        </p>
         
-        
+        <p id="rights" >
+            <input type="checkbox" id="rights" name="rights" value="yes" required >
+            I cant sue you
+        </p>
+        <p id="rights" >
+            <input type="checkbox" id="rights" name="rights" value="yes" required >
+            I give up all of my rights
+        </p>
+        <p id="rights" >
+            <input type="checkbox" id="rights" name="rights" value="yes" required >
+            Please send me spam mails
+        </p>
         
         
         <p><a href="#" >Forgot Password?</a></p>
-        <button type="submit">Log In</button>
+        <button type="submit">Sign Up</button>
     </form>
-    <p>Don't have an account? <a href="sign-in.html">Sign Up</a></p>
+    <p>already have an account? <a href="login.html">Log In</a></p>
     </div>
 
     <footer class="footer">
         <div>
-            <img src="./public/logo.png" width="50px" height="50px"/></a>
+            <img src="/public/logo.png" width="50px" height="50px" /></a>
             <h2>Hajz</h2>
         </div>
         <table>
