@@ -1,10 +1,133 @@
-<html lang="en">
-<head>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>User profile page</h1>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">   
+    <link rel="global.css">
+    <title>Group Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      /* Basic styling for the group profile table */
+        table.info {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        text-align: center ;
+      }
+      table.info td {
+        border: 1px solid blueviolet;
+        padding: 8px;
+        text-align: center;
+      }
+      table.info th {
+        background-color: #ffc72c71;
+        text-align: left;
+      }
+      div.content {
+        padding: 10px;
+        text-align: center;
+        margin: 5% 20%;
+        border: 1px solid #6518ff;
+        border-radius: 2%;
+      }
+      h2.group {
+        color: #6518ff;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <nav class="home-nav">
+        <div>
+            <img src="C:\Users\altar\Desktop\comp3700_SP25_project-main\public\logo.png" width="30px" height="30px"/></a>
+            <h2>Hajz</h2>
+        </div>
+        <div id="nav-links">
+            
+                <a href="index.html">Home</a>
+                <a href="shared/about-us.html">About Us</a>
+                <a href="shared/contact.html">Contact</a>
+                <a href="profile/group.html">Profile Group</a>
+                <a href="events/explore.html">Explore</a>
+            
+        </div>
+        <div>
+            <button class="login">Login</button>
+            <button class="register">Register</button>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h2 class="group">Group Profile Details</h2>
+        <table class="info">
+          <tr>
+            <th>Attribute</th>
+            <th>Information</th> </tr>
+          
+        <tr>
+            <td class="rights">Website Name</td>
+            <td>Hajz</td> </tr>
+          
+        <tr>
+            <td class="rights">Purpose</td>
+            <td>Selling and Managing Tickets for Different Events</td> </tr>
+
+        <tr>
+            <td class="rights" rowspan="3">Team Members</td>
+            <td>Salah Alhashmi</td> </tr>
+        <tr>
+            <td>Qusai Al Something</td>
+        </tr>
+        <tr>
+            <td>Al-tariq Alhajri</td>
+        </tr>
+      
+        <tr>
+            <td>Contact Email</td>
+            <td><a href="mailto:s146201@student.squ.edu.om">s146201@student.squ.edu.om</a></td> </tr>
+        </table>
+
+        <h2 class="group">About Our Team</h2>
+        <p>
+          Our dedicated team of three professionals is committed to providing the best ticket buying and management experience. With a focus on reliability and customer service, Hajz ensures that every event is just a click away.
+        </p>
+    </p>
+</div>
+
+<footer class="footer" >
+    <div>
+        <img src="C:\Users\altar\Desktop\comp3700_SP25_project-main\public\logo.png" width="50px" height="50px"/></a>
+        <h2>Hajz</h2>
+    </div>
+    <table>
+        <tr>
+            <th>Social Accounts</th>
+            <th>Pages</th>
+            <th>Developers</th>
+        </tr>
+        <tr>
+            <td><a href="https://www.facebook.com">Facebook</a></td>
+            <td><a href="shared/about-us.html">About Us</a></td>
+            <td>Salah Alhashmi</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.twitter.com">Twitter</a> </td>
+            <td><a href="shared/contact.html">Contact</a></td>
+            <td>Qusai Al Something</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.instagram.com">Instagram</a> </td>
+            <td><a href="index.html">Home</a></td>
+            <td>Al-tariq Alhajri</td>
+        </tr>
+    </table>
+    <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
+</footer>
+  </body>
 </html>

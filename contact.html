@@ -1,155 +1,172 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">   
-    <link rel="stylesheet" href= "global.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="icon" type="image/x-icon" href="/public/logo.png">
+
     <style>
 
+        .contact {
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
         #container {
 
-        position:relative;
-        left: 40%;
-        transform: translate(-50%, -10%);
-        margin: 10%;
-        text-align: left;
-        width: 20cm;
-        height: fit-content;
+
+            margin: 10%;
+            text-align: left;
+            width: 20cm;
+            height: fit-content;
 
         }
 
         form {
-        border: 2px solid #ffc72c  ;
+            border: 2px solid #ffc72c;
 
-        border-radius: 15px;
+            border-radius: 15px;
 
-        padding: 20px;
+            padding: 20px;
 
         }
 
         #boxes {
-        width: 100%;
-        padding: 10px;
-        margin: 5px ;
-        border: 1px solid #6518ff;
-        border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #6518ff;
+            border-radius: 5px;
         }
 
 
 
         #rights {
-        text-align: left;
-        margin-left: 20px;
-        font-size: small;
+            text-align: left;
+            margin-left: 20px;
+            font-size: small;
 
 
         }
+
         button {
-        background-color: #6518ff;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+            background-color: #6518ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         *:hover {
-        background-color: #ffc72c ;
-        transform: translateY(-2px);
-        transition: 0.2s;
+            background-color: #ffc72c;
+            transform: translateY(-2px);
+            transition: 0.2s;
         }
+
         :active {
-        background-color: #ffc72c;
-        transform: translateY(-2px);
-        transition: 0.2s;
+            background-color: #ffc72c;
+            transform: translateY(-2px);
+            transition: 0.2s;
         }
+
         button:hover {
-        background-color: #ffc72c;
-        transform: translateY(-2px);
-        transition: 0.2s;
+            background-color: #ffc72c;
+            transform: translateY(-2px);
+            transition: 0.2s;
         }
+
         button:active {
-        background-color: #ffc72c;
-        transform: translateY(4px);
+            background-color: #ffc72c;
+            transform: translateY(4px);
         }
     </style>
-    <title>Contact Us</title>
+    <title>Hajz | Contact Us</title>
 </head>
+
 <body>
     <nav class="home-nav">
         <div>
-            <img src="public/logo.png" width="30px" height="30px"/></a>
+            <img src="./public/logo.png" width="30px" height="30px"/></a>
             <h2>Hajz</h2>
         </div>
         <div id="nav-links">
             
-                <a href="index.html">Home</a>
-                <a href="shared/about-us.html">About Us</a>
-                <a href="shared/contact.html">Contact</a>
-                <a href="events/explore.html">Explore</a>
+                <a href="/index.html">Home</a>
+                <a href="/about-us.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/events/explore.html">Explore</a>
             
         </div>
         <div>
-            <button class="login">Login</button>
-            <button class="register">Register</button>
+            <a href="/auth/login.html"> <button class="login">Login</button></a>
+            <a href="/auth/sign-in.html">
+                <button class="register">Register</button>
+            </a>
         </div>
     </nav>
 
 
-        
-        
+    <div class="contact">
+    <form action="mailto:s146201@student.squ.edu.om" method="post" id="container" enctype="text/plain">
+        <h1 style="text-align: center;">Contact Us</h1>
+        <label for="Name">Name:</label><br />
+        <input type="text" name="Name" id="boxes" placeholder="Enter your name" required> <br />
 
-        <form action="mailto:s146201@student.squ.edu.om" method="post" id= "container" enctype="text/plain">
-            <h1 style="text-align: center;">Contact Us</h1>
-        <label for="Name">Name:</label><br/>
-        <input type="text" name="Name" id = "boxes" placeholder="Enter your name" required> <br/>
-        
-        <label for="Email">Email:</label><br/>
-        <input type="email" name="Email" id = "boxes" placeholder="Enter your email" required><br/>
-        
-        <label for="Subject">Subject:</label><br/>
-        <input type="text" name="Subject" id = "boxes" placeholder="Enter the subject" required>
-        
-        <textarea name="Message" id = "boxes" placeholder="Your message" rows="20"></textarea><br/>
-        
+        <label for="Email">Email:</label><br />
+        <input type="email" name="Email" id="boxes" placeholder="Enter your email" required><br />
+
+        <label for="Subject">Subject:</label><br />
+        <input type="text" name="Subject" id="boxes" placeholder="Enter the subject" required>
+
+        <textarea name="Message" id="boxes" placeholder="Your message" rows="20"></textarea><br />
+
         <div style="text-align: center; margin-top: 5%;">
-        <button type="submit">Send</button>
-        <button type="reset">Reset</button>
-    </div>
+            <button type="submit">Send</button>
+            <button type="reset">Reset</button>
+        </div>
     </form>
 
-    
-   <footer class="footer" >
-    <div>
-        <img src="C:\Users\altar\Desktop\comp3700_SP25_project-main\public\logo.png" width="50px" height="50px"/></a>
-        <h2>Hajz</h2>
+</div>
+    <footer class="footer">
+        <div>
+            <img src="C:\Users\altar\Desktop\comp3700_SP25_project-main\public\logo.png" width="50px"
+                height="50px" /></a>
+            <h2>Hajz</h2>
+        </div>
+        <table>
+            <tr>
+                <th>Social Accounts</th>
+                <th>Pages</th>
+                <th>Developers</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.facebook.com">Facebook</a></td>
+                <td><a href="/about-us.html">About Us</a></td>
+                <td>Salah Alhashmi</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.twitter.com">Twitter</a> </td>
+                <td><a href="/contact.html">Contact</a></td>
+                <td>Qusai Al Something</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.instagram.com">Instagram</a> </td>
+                <td><a href="index.html">Home</a></td>
+                <td>Al-tariq Alhajri</td>
+            </tr>
+        </table>
+        <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
+    </footer>
     </div>
-    <table>
-        <tr>
-            <th>Social Accounts</th>
-            <th>Pages</th>
-            <th>Developers</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.facebook.com">Facebook</a></td>
-            <td><a href="shared/about-us.html">About Us</a></td>
-            <td>Salah Alhashmi</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.twitter.com">Twitter</a> </td>
-            <td><a href="shared/contact.html">Contact</a></td>
-            <td>Qusai Al Something</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.instagram.com">Instagram</a> </td>
-            <td><a href="index.html">Home</a></td>
-            <td>Al-tariq Alhajri</td>
-        </tr>
-    </table>
-    <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
-</footer>
-
 </body>
+
 </html>

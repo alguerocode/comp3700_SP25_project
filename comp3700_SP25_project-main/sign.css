@@ -5,21 +5,12 @@ body {
 }
 #container {
 
-    /* position: relative; */
-    /* top: 10%;
+    position: relative;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
-    margin-top: 10%; */
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 70px;
-
-    margin-bottom: 50px;
+    /* margin-top: 10%; */
+    margin-bottom: 100px;
     text-align: center;
     width: 300px;
     

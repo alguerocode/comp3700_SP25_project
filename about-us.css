@@ -1,0 +1,23 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 100px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.details {
+    border-collapse: collapse;
+
+}
+
+tr td {
+    text-align: start;
+    padding: 20px;
+}
+
+
