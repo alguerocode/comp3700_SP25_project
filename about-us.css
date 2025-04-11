@@ -1,8 +1,12 @@
 .hero {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: auto;
+    max-width: 600px;
+    margin: auto;
     margin-bottom: 100px;
+    width: 100%;
+    overflow: hidden;
     text-align: center;
 }
 
