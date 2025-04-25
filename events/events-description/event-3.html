@@ -32,41 +32,7 @@
         </div>
     </nav>
     <div class="event">
-        <h1>Business Training</h1>
-        <img class="cover" src="/public/events/training.jpg" alt="" width="300" height="160">
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint itaque provident iusto corrupti consequuntur
-            debitis omnis voluptatum in aliquid laborum expedita aliquam cum cupiditate obcaecati, reiciendis quasi ea
-            temporibus deleniti.
-        </p>
-
-        <table border="1">
-            <tr>
-                <td><img class="icon" src="/public/events/location.png" width="10px" height="10px" />Location</td>
-                <td>Self-Learning Center</td>
-            </tr>
-            <tr>
-                <td><img class="icon" src="/public/events/calendar.png" width="10px" height="10px" />Event Time</td>
-                <td>3/5/2026 3:00am</td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="icon" src="/public/events/group.png" width="20px" height="20px" /> Maximum audience
-                </td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td><img class="icon" src="/public/events/ticket.png" width="20px" height="20px" /> Available Tickets
-                </td>
-                <td>17</td>
-            </tr>
-        </table>
-
-        <form action="" class="ticket">
-            <label for="">Number of Tickets</label>
-            <input type="number" value="1" required>
-            <button class="get-ticket">Get Tickets</button>
-        </form>
+        <!-- here dynamic content rendered -->
     </div>
     <footer class="footer">
         <div>
@@ -97,5 +63,20 @@
         </table>
         <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
     </footer>
+
+
+    <script>
+        const eventDetails =     {
+        title:"Business Training",
+        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
+        maximumAudience:50,
+        eventTime: "3/5/2026 3:00am",
+        location: "Self-Learning Center",
+        imgUrl:"/public/events/training.jpg",
+        link:"events-description/event-3.html",
+        availableTickets: 17
+    }
+    </script>
+    <script src="./event-details.js"/>
 </body>
 </html>

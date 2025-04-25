@@ -35,89 +35,11 @@
     <div>
         <form action="">
 
-            <input type="text" placeholder="Search for Event">
-            <button type="submit">Search</button>
+            <input id="search-input" type="text" placeholder="Search for Event">
+            <button id="search-btn" type="submit">Search</button>
         </form>
     </div>
-    <ul>
-        <li>
-            <img src="/public/events/conference.jpg" width="350" height="370"/>
-                <div>
-            <h2>Technology Conference</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores
-                tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!</p>
-            
-            <p>
-                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: 21300
-            </p>
-            <p>
-                <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-
-              Event Time: <time>12/3/2025 10:00pm</time>  
-            </p>
-            <p>
-                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-
-                location: Lecutre Hall 4</p>
-            <a href="events-description/event-1.html">
-                <button>View</button>
-            </a>
-        </div>
-        </li>
-        <li>
-            <img src="/public/events/football.jpg" width="250" height="170"/>
-                <div>
-            <h2>Soccer Cup</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores
-                tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!</p>
-            
-            <p>
-                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: 5000
-            </p>
-            <p>
-                <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-
-              Event Time: <time>3/2/2025 6:30am</time>  
-            </p>
-            <p>
-                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-
-                location: SQU Football Field</p>
-            <a href="events-description/event-2.html">
-                <button>View</button>
-            </a>
-        </div>
-        </li>
-        <li>
-            <img src="/public/events/training.jpg" width="250" height="170"/>
-                <div>
-            <h2>Business Training</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores
-                tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!</p>
-            
-            <p>
-                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: 50
-            </p>
-            <p>
-                <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-
-              Event Time: <time>3/5/2026 3:00am</time>  
-            </p>
-            <p>
-                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-
-                location: Self-Learning Center</p>
-            <a href="events-description/event-3.html">
-                <button>View</button>
-            </a>
-        </div>
-
+    <ul id="events-list">
 
     </ul>
 
@@ -151,5 +73,6 @@
         </table>
         <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
     </footer>
+    <script src="./explore.js" />
 </body>
 </html>
