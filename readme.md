@@ -65,3 +65,50 @@ hajzi eggwhite: #f3f1f8
 ```
 
 - name you style with 'html_filename.css' 
+---
+
+project 3 tasks
+
+
+# no one push to main until I see the code please no dumbass activity
+
+salah:
+- responsive navigation bar using boostrap
+- display information of evetns dynamically , also the event description
+- search functionality for events explore
+- event bill calulator
+    - apply discounts if ticket more than 3
+    - apply discountn for children
+    - full comment to how calculator work
+    - nice looking
+- make game should be related to website in 'funpage.html' ( I Don't what's going in instructor mind)
+
+
+tariq:
+- the tables information you make , add it as javascript object & array
+- display the information dynamically
+
+6. Update your index.html page to include the followings:
+    a) A text-banner at the bottom of the page, moving from left to right (or right to left) in the page; displaying a welcome message; such as “Welcome to the
+    <company_name> website! Today is
+    <current_date>, and the time is <current_time>”
+
+    b) Add a photo-gallery, which displays a set of photos (at least 3) in rotational manner where each photo remains at least 3 seconds before it is exchanged automatically.
+
+    c) Edit your home page to include a direct link to the three new pages in questions 1, 2, 3 described above (i.e.; Questionnaire page, calculate page, and fun page).
+
+
+qusai:
+- questionnair page ( read in pdf)
+
+
+
+
+rules:
+- remove all css rules to bootstrap
+    - use grid bootstrap system for responsivity
+    - use boostrap forms, boostrap form validation
+
+- all information like(about, contact, page, events) should be as javascript object or array
+
+- all should add comment - if comment come from chatgpt remove if and add some humanity to it
