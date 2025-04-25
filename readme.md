@@ -87,6 +87,7 @@ salah:
 tariq:
 - the tables information you make , add it as javascript object & array
 - display the information dynamically
+- design your previous pages to boostrap
 
 6. Update your index.html page to include the followings:
     a) A text-banner at the bottom of the page, moving from left to right (or right to left) in the page; displaying a welcome message; such as “Welcome to the
@@ -100,7 +101,7 @@ tariq:
 
 qusai:
 - questionnair page ( read in pdf)
-
+- design your previous pages to boostrap ( the forms you know about it)
 
 
 
