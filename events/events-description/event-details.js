@@ -33,11 +33,9 @@ function renderDyanimcEventDetails(eventDetails) {
             </tr>
         </table>
 
-        <form action="" class="ticket">
-            <label for="">Number of Tickets</label>
-            <input type="number" value="1" required>
-            <button class="get-ticket">Get Tickets</button>
-        </form>
+        <div class="ticket">
+            <a href="../event-calculator/event-calculator.html" class="get-ticket">Get Tickets</a>
+        </div>
     `;
 
     return html;
