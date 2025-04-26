@@ -2,45 +2,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/sign.css">
-    <link rel="stylesheet" href="/global.css">
     <title>Hajz | Register</title>
     <link rel="icon" type="image/x-icon" href="/public/logo.png">
 
+
+
+    <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+
+        <link rel="icon" type="image/x-icon" href="/public/logo.png">
+     <!-- Required meta tags -->
+     <meta charset="utf-8" />
+     <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no"
+     />
+
+     <!-- Bootstrap CSS v5.2.1 -->
+     <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+         crossorigin="anonymous"
+     />
 </head>
 
 
 
 <body>
-    
-    <div id="container" >
-    <form method="post"   action="https://httpbin.org/get">
+    <div class="container-fluid text-center w-100  p-5 ">
 
-        <p><img src="/public/logo.png" width="100" ></p>
-        
-        
-        <p><input type="text" name="username"  id="boxes" placeholder="Username" required>        </p>
-        <p><input type="password" name="password"  id="boxes" placeholder="Password" required>        </p>
-        
-        <p id="rights" >
-            <input type="checkbox" id="rights" name="rights" value="yes" required >
-            I cant sue you
-        </p>
-        <p id="rights" >
-            <input type="checkbox" id="rights" name="rights" value="yes" required >
-            I give up all of my rights
-        </p>
-        <p id="rights" >
-            <input type="checkbox" id="rights" name="rights" value="yes" required >
-            Please send me spam mails
-        </p>
-        
-        
-        <p><a href="#" >Forgot Password?</a></p>
-        <button type="submit">Sign Up</button>
-    </form>
-    <p>already have an account? <a href="login.html">Log In</a></p>
+        <div class="row content ">
+
+            
+            <div class="container col-sm-3 rounded-4 border shadow ">
+
+                <form action="post" class="was-validated" action="https://httpbin.org/get" >
+                <div class="mt-4 mb-4">
+                    
+                    <img src="/public/logo.png" width="75" alt="Logo">
+                    
+                </div>
+                
+                
+                <div>
+                    <h1 class="">Hajz</h1>
+                    <p class="text-muted">Please enter your name & Password</p>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-10 ">
+                        
+                        <div class="form-floating mb-3 mt-3">
+                
+                            <input type="text" class="form-control rounded-4 " name="username" id="uName" placeholder="username" required>
+                            <label for="uName" class="form-label">Name</label>
+                            
+                        </div>
+                        <div class="form-floating mb-4 ">
+                            <input type="password" class="form-control rounded-4" name="password" id="uName" placeholder="password" required>
+                            <label for="pWord" class="form-label">Password</label>
+                        </div>
+                        <div class="test-center mb-4">
+                            <div class="form-check mb-1 text-start">
+                                <input class="form-check-input" type="checkbox"  name="remember" required >
+                                <label class="form-check-label text-start" for="myCheck">I cant sue you</label>
+                            </div>
+            
+                            <div class="form-check mb-1 text-start">
+                                <input class="form-check-input" type="checkbox"  name="remember" required >
+                                <label class="form-check-label text-start" for="myCheck">I give up all of my rights</label>
+                            </div>
+            
+                            <div class="form-check mb-3 text-start">
+                                <input class="form-check-input" type="checkbox"  name="remember" required >
+                                <label class="form-check-label text-start" for="myCheck">Please send me spam mails</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary rounded-4 w-100">Sign Up</button>
+                        </div>
+                    </div>
+                </div> 
+                <p>Already have an account? <a href="login.html">Log In</a></p>
+                </form>
+            </div>  
+        </div>
     </div>
+
+
+
+
     <footer class="footer">
         <div>
             <img src="/public/logo.png" width="50px" height="50px"/></a>
