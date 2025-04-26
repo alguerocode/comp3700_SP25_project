@@ -4,7 +4,7 @@
 
 const ORIGNAL_ATTEMPTS = 3
 let attempts = ORIGNAL_ATTEMPTS;
-
+let playerWin = false;
 
 
 const ticketHTML = `
@@ -41,7 +41,7 @@ function openCell(cell, ticketRow, ticketCol) {
         return;
     }
 
-    if(attempts == 0) {
+    if(attempts == 0 || playerWin) {
         window.alert("You Don't have attempts, play again");
         return;
     }
@@ -65,6 +65,7 @@ function openCell(cell, ticketRow, ticketCol) {
 
 
 function winGame() {
+    playerWin = true;
     document.querySelector(".game-status").innerHTML = `<div class="alert alert-success" role="alert">
   A simple success alert—check it out!
 </div>`
@@ -89,6 +90,7 @@ function selectRandomCell() {
 
 
 function gameStart() {
+    playerWin = false;
     const [ticketRow, ticketCol ] =  selectRandomCell();
     gameWindow.innerHTML = gameTemplate;
     attempts = ORIGNAL_ATTEMPTS;

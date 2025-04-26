@@ -11,24 +11,35 @@
 </head>
 
 <body>
-    <nav class="home-nav">
-        <div>
-            <img src="/public/logo.png" width="30px" height="30px" /></a>
-            <h2>Hajz</h2>
-        </div>
-        <div id="nav-links">
+    <nav class="navbar navbar-expand-lg " style="background-color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"> <img src="/public/logo.png" width="30px" height="30px" /></a>
+            <h2>Hajz</h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mx-5" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about-us.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/events/explore.html">Explore</a>
+                    </li>
 
-            <a href="/index.html">Home</a>
-            <a href="/about-us.html">About Us</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/events/explore.html">Explore</a>
-
-        </div>
-        <div>
-            <a href="/auth/login.html"> <button class="login">Login</button></a>
-            <a href="/auth/sign-in.html">
-                <button class="register">Register</button>
-            </a>
+                </ul>
+                <form class="d-flex" role="search">
+                    <a class="btn m-1" href="/auth/sign-in.html" style="border: 1px solid #6518ff; color:#6518ff ;">Register</a>
+                    <a class="btn  m-1" href="/auth/login.html" style="background-color: #6518ff; color: white;">Login</a>
+                </form>
+            </div>
         </div>
     </nav>
     <div class="main">
