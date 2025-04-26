@@ -43,23 +43,17 @@
     </nav>
 
     <h1>Find the Free Ticket</h1>
-    <button>Play Again</button>
-    <p>You have # Attempts</p>
+    <i class="bi bi-ticket-perforated"></i>
+    <i class="bi bi-ticket-perforated"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-ticket-perforated" viewBox="0 0 16 16">
+        <path d="M4 4.85v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9z"/>
+        <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"/>
+      </svg>
+    <button id="reset-game">Play Again</button>
+    <p>You have <span id="attempts"></span> Attempts</p>
+    <div class="game-status"></div>
+    <div id="game-window" class="d-flex flex-wrap justify-content-center" style="max-width: 330px; margin: auto;"></div>
 
-    <div class="d-flex flex-wrap justify-content-center" style="max-width: 220px; margin: auto;">
-        <!-- 3x3 = 9 squares -->
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-    
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-    
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-        <div class="bg-primary rounded m-1" style="width: 60px; height: 60px;"></div>
-      </div>
 
     <footer class="footer">
         <div>
@@ -90,6 +84,8 @@
         </table>
         <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
     </footer>
+
+    <script src="./funpage.js"></script>
 </body>
 
 </html>
