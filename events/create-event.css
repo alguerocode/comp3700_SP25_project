@@ -1,15 +1,28 @@
-body {
-    width: 100%;
-    background-color: #f3f1f8;  
-    
-}
-#container {
 
+h3{
+    text-align: center;
+    color: #6518ff;
+
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 1px;
+    margin-top: 0px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 20px;
+    padding-bottom: 20px;
+    text-underline-position: under;
+
+}
+
+.main {
+    
     /* position: relative; */
     /* top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
     margin-top: 10%; */
+    
     display: flex;
     justify-items: center;
     align-items: center;
@@ -21,18 +34,20 @@ body {
 
     margin-bottom: 50px;
     text-align: center;
-    width: 300px;
+    width: 400px;
     
 }
 
-form {
+#container{
+    background-color: #f3f1f8;
     border: 2px solid #6518ff ;
     
     border-radius: 15px;
     
     padding: 20px;
-
 }
+
+
 #boxes {
     
     width: 75%;
@@ -41,15 +56,21 @@ form {
     border: 1px solid #6518ff;
     border-radius: 5px;
 }
-#rights {
+
+textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #6518ff;
+    border-radius: 5px;
+    margin: 5px 0;
     text-align: left;
-    margin-left: 20px;
-    font-size: small;
-    
-    
 }
-button {
+
+#button {
     background-color: #6518ff;
+    width: 50%;
+    height: 50px;
+    font-size: 23px;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -57,22 +78,13 @@ button {
     cursor: pointer;
 }
 
-*:hover {
-    background-color: #ffc72c ;
-    transform: translateY(-2px);
-    transition: 0.2s;
-}
-:active {
+#button:hover, #aLink:hover {
     background-color: #ffc72c;
     transform: translateY(-2px);
     transition: 0.2s;
 }
-button:hover {
+#button:active {
     background-color: #ffc72c;
     transform: translateY(-2px);
     transition: 0.2s;
-}
-button:active {
-    background-color: #ffc72c;
-    transform: translateY(4px);
 }
