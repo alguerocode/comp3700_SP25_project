@@ -4,152 +4,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hajz | Explore</title>
     <link rel="stylesheet" href="/global.css">
-    <link rel="stylesheet" href="./explore.css">
+    <!-- <link rel="stylesheet" href="./explore.css"> -->
     <link rel="icon" type="image/x-icon" href="/public/logo.png">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="home-nav">
-        <div>
-            <img src="/public/logo.png" width="30px" height="30px"/></a>
-            <h2>Hajz</h2>
-        </div>
-        <div id="nav-links">
-                <a href="/index.html">Home</a>
-                <a href="/about-us.html">About Us</a>
-                <a href="/contact.html">Contact</a>
-                <a href="/events/explore.html">Explore</a>
-        </div>
-        <div>
-            <a href="/auth/login.html"> <button class="login">Login</button></a>
-            <a href="/auth/sign-in.html">
-                <button class="register">Register</button>
-            </a>
+
+    <nav class="navbar navbar-expand-lg " style="background-color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"> <img src="/public/logo.png" width="30px" height="30px" /></a>
+            <h2>Hajz</h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mx-5" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about-us.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/events/explore.html">Explore</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <a class="btn m-1" href="/events/create-event.html" style="border: 1px solid #6518ff; color:#6518ff ;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="mx-1 bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                        <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5"/>
+                        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                      </svg>Create Event</a>
+                    <a class="btn m-1" href="/auth/sign-in.html" style="border: 1px solid #6518ff; color:#6518ff ;">Register</a>
+                    <a class="btn  m-1" href="/auth/login.html" style="background-color: #6518ff; color: white;">Login</a>
+                </form>
+            </div>
         </div>
     </nav>
-    <h1 class="explore-header">Explore events page</h1>
-    <div>
-        
-        <form action="">
-            <a href="/events/create-event.html">
-                <button id="bLeft" >Create</button>
-            </a>
-            <input type="text" placeholder="Search for Event">
-            <button type="submit" id="bRight">Search</button>
-            
-        </form>
-    </div>
-    <ul>
-        <li>
-            <img src="/public/events/conference.jpg" width="350" height="370"/>
-                <div>
-            <h2>Technology Conference</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores
-                tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!</p>
-            
-            <p>
-                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: 21300
-            </p>
-            <p>
-                <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-
-              Event Time: <time>12/3/2025 10:00pm</time>  
-            </p>
-            <p>
-                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-
-                location: Lecutre Hall 4</p>
-            <a href="events-description/event-1.html">
-                <button>View</button>
-            </a>
-        </div>
-        </li>
-        <li>
-            <img src="/public/events/football.jpg" width="250" height="170"/>
-                <div>
-            <h2>Soccer Cup</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores
-                tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!</p>
-            
-            <p>
-                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: 5000
-            </p>
-            <p>
-                <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-
-              Event Time: <time>3/2/2025 6:30am</time>  
-            </p>
-            <p>
-                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-
-                location: SQU Football Field</p>
-            <a href="events-description/event-2.html">
-                <button>View</button>
-            </a>
-        </div>
-        </li>
-        <li>
-            <img src="/public/events/training.jpg" width="250" height="170"/>
-                <div>
-            <h2>Business Training</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores
-                tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!</p>
-            
-            <p>
-                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: 50
-            </p>
-            <p>
-                <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-
-              Event Time: <time>3/5/2026 3:00am</time>  
-            </p>
-            <p>
-                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-
-                location: Self-Learning Center</p>
-            <a href="events-description/event-3.html">
-                <button>View</button>
-            </a>
-        </div>
-
+    <h2 class="my-3" style="margin: auto;width: 350px;">Explore events page</h2>
+ <div class="input-group mb-3" class="my-3" style="margin: auto;width: 350px;">
+    <input  id="search-input" type="text" class="form-control" placeholder="Search for Event" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn" type="button" id="search-btn" style="background-color: #6518ff; color: white;">Search <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg></button>
+  </div>
+    <ul id="events-list" class="d-flex flex-wrap">
 
     </ul>
 
 
-    <footer class="footer">
-        <div>
-            <img src="/public/logo.png" width="50px" height="50px"/></a>
+    <footer class="h-100 footer" style="max-height: 400px; background-color: #f3f1f8; margin: 0; padding: 20px;" >
+        <div class="d-flex justify-content-center align-items-center" style="margin: 0; padding: 0; gap: 10px; font-size: 24px;">
+            <img src="/public/logo.png" width="50px" height="50px" style="margin:0;margin-bottom:10px"/></a>
             <h2>Hajz</h2>
         </div>
-        <table>
+        <table class="m-3 text-start p-0 w-100">
             <tr>
-                <th>Social Accounts</th>
-                <th>Pages</th>
-                <th>Developers</th>
+                <th class="text-start" style="font-size: 20px;">Social Accounts</th>
+                <th class="text-start" style="font-size: 20px;">Pages</th>
+                <th class="text-start" style="font-size: 20px;">Developers</th>
             </tr>
             <tr>
-                <td><a href="https://www.facebook.com">Facebook</a></td>
-                <td><a href="/about-us.html">About Us</a></td>
+                <td><a class="text-dark text-decoration-none" href="https://www.facebook.com">Facebook</a></td>
+                <td><a class="text-dark text-decoration-none" href="/about-us.html">About Us</a></td>
                 <td>Salah Alhashmi</td>
             </tr>
             <tr>
-                <td><a href="https://www.twitter.com">Twitter</a> </td>
-                <td><a href="/contact.html">Contact</a></td>
+                <td><a class="text-dark text-decoration-none" href="https://www.twitter.com">Twitter</a> </td>
+                <td><a class="text-dark text-decoration-none" href="/contact.html">Contact</a></td>
                 <td>Qusai Alkalbani</td>
             </tr>
             <tr>
-                <td><a href="https://www.instagram.com">Instagram</a> </td>
-                <td><a href="index.html">Home</a></td>
+                <td><a class="text-dark text-decoration-none" href="https://www.instagram.com">Instagram</a> </td>
+                <td><a class="text-dark text-decoration-none" href="/index.html">Home</a></td>
                 <td>Al-tariq Alhajri</td>
             </tr>
         </table>
-        <p>&copy; 2023 Event Ticket System. All rights reserved.</p>
+        <p class="m-0 p-0 text-center" style="font-size: 16px;">&copy; 2023 Event Ticket System. All rights reserved.</p>
     </footer>
+    <script src="./explore.js" />
 </body>
 </html>

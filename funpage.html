@@ -1,3 +1,4 @@
+<!-- this game you have grid 6 by 6 and click some squares to find which is square inside it the free ticket and you have 3 attempts to find it -->
 <html lang="en">
 
 <head>
@@ -20,27 +21,6 @@
 </head>
 
 <body>
-    <!-- <nav class="home-nav">
-        <div>
-            <img src="./public/logo.png" width="30px" height="30px"/></a>
-            <h2>Hajz</h2>
-        </div>
-        <div id="nav-links">
-            
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="events/explore.html">Explore</a>
-            
-        </div>
-        <div>
-            <a href="/auth/login.html"> <button class="login">Login</button></a>
-            <a href="/auth/sign-in.html">
-                <button class="register">Register</button>
-            </a>
-        </div>
-    </nav> -->
-
     <nav class="navbar navbar-expand-lg " style="background-color: white;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"> <img src="./public/logo.png" width="30px" height="30px" /></a>
@@ -73,33 +53,27 @@
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="hero-text">
-            <h1>event ticket system website</h1>
+    <h2 class="fw-bold" style="max-width: 550px; margin: auto;color:#6518ff; text-align: center;">Find the Free Ticket <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-ticket-perforated" viewBox="0 0 16 16">
+        <path d="M4 4.85v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9z"/>
+        <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"/>
+      </svg></h2>
 
-            <p>A platform where organizers can create and manage events, sell tickets, and track attendance, while users
-                can browse upcoming events, purchase tickets securely, and receive digital passes for entry.</p>
-
-            <div>
-                <a href="/events/explore.html">
-                    <button class="login">Get Started</button>
-                </a>
-                <a href="/auth/login.html">
-                    <button class="register">Login</button>
-                </a>
-            </div>
-        </div>
-        <div class="hero-img">
-            <img src="./public/hero-img.jpg" width="300px" height="300px" />
-        </div>
+      <p  style="margin: auto;max-width: 300px; text-align: center;">You have <span id="attempts" class="fs-2 fw-bold"></span> Attempts</p>
+    <div class="w-100 d-flex my-5" style="justify-content: center;">
+        <button id="reset-game" class="btn" style="margin:auto;max-width:200px;border: 1px solid #6518ff; color:#6518ff ;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise me-2" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+          </svg>Play Again
+        </button>
     </div>
+    <div class="game-status"></div>
+    <div id="game-window" class="d-flex flex-wrap justify-content-center" style="max-width: 330px; margin: auto;;margin-bottom: 70px"></div>
 
 
 
     <footer class="h-100 footer" style="max-height: 400px; background-color: #f3f1f8; margin: 0; padding: 20px;" >
         <div class="d-flex justify-content-center align-items-center" style="margin: 0; padding: 0; gap: 10px; font-size: 24px;">
             <img src="/public/logo.png" width="50px" height="50px" style="margin:0;margin-bottom:10px"/></a>
-
             <h2>Hajz</h2>
         </div>
         <table class="m-3 text-start p-0 w-100">
@@ -125,7 +99,10 @@
             </tr>
         </table>
         <p class="m-0 p-0 text-center" style="font-size: 16px;">&copy; 2023 Event Ticket System. All rights reserved.</p>
+
     </footer>
+
+    <script src="./funpage.js"></script>
 </body>
 
 </html>
