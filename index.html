@@ -17,30 +17,54 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+    <style>
+        @-webkit-keyframes rightThenLeft {
+            0% {
+                left: 0%;
+            }
+
+            50% {
+                left: 100%;
+            }
+
+            100% {
+                left: 0%;
+            }
+        }
+
+        .text-banner {
+            -webkit-animation: rightThenLeft 4s linear;
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <nav class="home-nav">
-        <div>
-            <img src="./public/logo.png" width="30px" height="30px"/></a>
-            <h2>Hajz</h2>
-        </div>
-        <div id="nav-links">
-            
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="events/explore.html">Explore</a>
-            
-        </div>
-        <div>
-            <a href="/auth/login.html"> <button class="login">Login</button></a>
-            <a href="/auth/sign-in.html">
-                <button class="register">Register</button>
-            </a>
-        </div>
-    </nav> -->
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+    <button type="button" id="open-welcome-modal-btn" class="btn visually-hidden btn-primary" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        lunch welcome message
+    </button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome to Hajz Website</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Time: <span id="current-time"></span> </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg " style="background-color: white;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"> <img src="./public/logo.png" width="30px" height="30px" /></a>
@@ -104,8 +128,14 @@
     </div>
 
 
-
-    <footer class="h-100 footer" style="max-height: 400px; background-color: #f3f1f8; margin: 0; padding: 20px;">
+    <!-- text banner -->
+    <div class="col-12 w-10 h-0" style="background: rgb(249, 249, 249); ;">
+        <div class="bg-primary w-25 text-white rounded p-2 text-banner">
+            Welcome to the Hajz website! Today is <span id="current-date"></span>, and the time is <span
+                id="current"></span>
+        </div>
+    </div>
+    <footer class="h-100 footer" style="max-height: 600px; background-color: #f3f1f8; margin: 0; padding: 130px 20px 20px 20px;">
         <div class="d-flex justify-content-center align-items-center"
             style="margin: 0; padding: 0; gap: 10px; font-size: 24px;">
             <img src="/public/logo.png" width="50px" height="50px" style="margin:0;margin-bottom:10px" /></a>
@@ -162,7 +192,17 @@
 
         <p class="m-0 p-0 text-center" style="font-size: 16px;">&copy; 2023 Event Ticket System. All rights reserved.
         </p>
+
     </footer>
+
+
+    <!-- open welcome modal & show current day and time -->
+    <script>
+        document.getElementById("open-welcome-modal-btn").click();
+        document.getElementById("current").innerText = (new Date()).toLocaleTimeString();
+        document.getElementById("current-date").innerText = (new Date()).toLocaleDateString();
+        console.log((new Date()).get())
+    </script>
 </body>
 
 </html>
