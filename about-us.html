@@ -5,9 +5,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./global.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./about-us.css">
+    <!-- <link rel="stylesheet" href="./global.css"> -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- <link rel="stylesheet" href="./about-us.css"> -->
     <link rel="icon" type="image/x-icon" href="/public/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
@@ -29,9 +29,13 @@
           { item: "Location:", information: "Muscat, Oman" },
           { item: "Instagram:", information: "@thismyprofile" }
         ];
-    
+      
+        // when loading the page dyanic render the table
         window.onload = function () {
+          // select table body
           const tableBody = document.getElementById("details-table-body");
+          
+          // go throw every detail information and render it as row
           aboutDetails.forEach(detail => {
             const row = document.createElement("tr");
     
@@ -40,10 +44,11 @@
     
             const infoCell = document.createElement("td");
             infoCell.textContent = detail.information;
-    
+            
+            // construct the row and append it to table body
             row.appendChild(itemCell);
             row.appendChild(infoCell);
-    
+            
             tableBody.appendChild(row);
           });
         };

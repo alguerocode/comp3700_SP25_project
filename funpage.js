@@ -1,18 +1,22 @@
 
 
 
-
+// setup global variables
 const ORIGNAL_ATTEMPTS = 3
 let attempts = ORIGNAL_ATTEMPTS;
 let playerWin = false;
 
 
+// ticket svg icon
 const ticketHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#6518ff" class="bi bi-ticket-perforated" viewBox="0 0 16 16">
         <path d="M4 4.85v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9z"/>
         <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"/>
       </svg>
 `
+
+
+// construct game html template which is grid 3x3
 const gameTemplate = `
         <!-- 3 by 3 -->
         <div data-row="1" data-col="1" class="game-cell bg-primary rounded m-1" style="width: 100px; height: 100px;"></div>
@@ -33,14 +37,19 @@ const gameWindow = document.getElementById("game-window");
 const attemptsEl = document.getElementById("attempts");
 
 
+
+// open cell function and check if the ticket insiide it
 function openCell(cell, ticketRow, ticketCol) {
+    // select the cell
     const cellRow = parseInt(cell.dataset.row);
     const cellCol = parseInt(cell.dataset.col);
-    
+
+    // open it by remove the blue background
     if(!cell.classList.contains("bg-primary")) {
         return;
     }
 
+    // tell user to play again if there no attempts
     if(attempts == 0 || playerWin) {
         window.alert("You Don't have attempts, play again");
         return;
@@ -50,6 +59,8 @@ function openCell(cell, ticketRow, ticketCol) {
 
 
 
+    // if ticket inside win the game
+    // else if there no attemps => lose the game
     attempts--;
     if(ticketRow == cellRow && ticketCol == cellCol) {
         cell.innerHTML = ticketHTML;
@@ -64,6 +75,7 @@ function openCell(cell, ticketRow, ticketCol) {
 
 
 
+// win game dynamic rendering
 function winGame() {
     playerWin = true;
     document.querySelector(".game-status").innerHTML = `<div class="alert alert-success" style="max-width:300px;margin: auto;
@@ -72,6 +84,8 @@ function winGame() {
 </div>`
 }
 
+
+// losing game dynamic rendering
 function loseGame() {
     document.querySelector(".game-status").innerHTML = `
     <div class="alert alert-danger"  style="max-width:300px ;margin: auto;
@@ -81,6 +95,7 @@ function loseGame() {
     `
 }
 
+// select random cell to be the ticket inside it
 function selectRandomCell() {
     const row = Math.floor(1 + (Math.random() * 3));
     const col = Math.floor(1 + (Math.random() * 3));
@@ -91,6 +106,8 @@ function selectRandomCell() {
 
 
 
+
+// main game functionality
 function gameStart() {
     playerWin = false;
     const [ticketRow, ticketCol ] =  selectRandomCell();
@@ -110,6 +127,8 @@ function gameStart() {
 
 gameStart();
 
+
+// reset game button
 document.querySelector("#reset-game").addEventListener('click', () => gameStart());
 
 

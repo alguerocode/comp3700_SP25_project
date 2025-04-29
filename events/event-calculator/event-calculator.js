@@ -51,7 +51,7 @@ function calculatePrices() {
     const VIPTickets = calculatorFormEl.VIPTickets.checked;
 
 
-    
+    // calculate all the prices
     let StarterTotalPrice = ticketNumber * ticketPrice;
     let foodService = StarterTotalPrice * 0.15;
     let multipleDiscount = StarterTotalPrice * 0.10
@@ -60,18 +60,24 @@ function calculatePrices() {
     let finalTotalPrice = StarterTotalPrice;
 
 
+    // if is child offer apply discount
     if(isKidType) finalTotalPrice -= childrenDiscount;
     else childrenDiscount = 0
     resultChildrenDiscountEl.innerText = " -$" + childrenDiscount;
 
+
+    // if more than 3 ticket offer apply the discount
     if(isMore3Ticket)  finalTotalPrice -= multipleDiscount
     else multipleDiscount = 0
     resultMultipleTicketEl.innerText = " -$" + multipleDiscount
 
+    // apply food services expense
     if(isFoodService) finalTotalPrice += foodService;
     else foodService = 0
     resultFoodServiceEl.innerText = " +$" + foodService;
 
+
+    // apply vip tickets expenses
     if(VIPTickets) finalTotalPrice += VIPTicketsPrice;
     else VIPTicketsPrice = 0
     resultVIPEl.innerText = " +$" + VIPTicketsPrice;
@@ -82,7 +88,9 @@ function calculatePrices() {
 
 
 
+// main calculator function
 function main() {
+    // calculate the prices when click calculate
     calculatorBtnEl.addEventListener("click", (e) => {
         e.preventDefault();
         calculatePrices();
