@@ -108,3 +108,35 @@ function main() {
 
 // fire main function
 main();
+
+
+
+// create event script
+
+const titleInput = document.getElementById("exampleInputEmail1");
+const aboutInput = document.getElementById("exampleInputabout1");
+const locationInput = document.getElementById("exampleLocation");
+const maxAudienceInput = document.getElementById("exampleInputMaxAud1");
+const eventTimeInput = document.getElementById("eventTime1");
+const imageUrlInpt  = document.getElementById("exampleInputurl1");
+const createBtn  = document.getElementById("create-event");
+
+
+createBtn.addEventListener("click", (e) => {
+  const eventData = new Object({
+    title: titleInput.value,
+    description: aboutInput.value,
+    maximumAudience: parseInt(maxAudienceInput.value),
+    eventTime:  eventTimeInput.value,
+    location: locationInput.value,
+    imgUrl: imageUrlInpt.value,
+    link: "events-description/event-2.html",
+  });
+  const ulElement = document.querySelector("ul#events-list");
+  ulElement.innerHTML += buildEventCard(eventData);
+  
+  // form validatin
+  document.getElementById('closemodal').click();
+
+})
+
