@@ -226,6 +226,10 @@
                                         <input type="text" class="form-control rounded-4" name="email" id="email"
                                             placeholder="Email" required>
                                         <label for="email" class="form-label">Email</label>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-sm-5">
@@ -233,6 +237,10 @@
                                         <input type="text" class="form-control rounded-4" name="name" id="name"
                                             placeholder="Name" required>
                                         <label for="name" class="form-label">Name</label>
+                                        <div class="invalid-feedback">
+                                            Please enter a name.
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -251,9 +259,11 @@
                                         <option value="experience">Experience Related</option>
                                         <option value="rating">Rating and Improvement</option>
                                     </select>
-
+                                    <div class="invalid-feedback">
+                                        Please select a feedback category.
+                                    </div>
                                 </div>
-
+                               
 
 
 
@@ -262,6 +272,7 @@
                                         <textarea class="form-control rounded-4 h-100 mb-5" name="feedback"
                                             id="feedback" placeholder="Feedback" required></textarea>
                                         <label for="feedback" class="form-label">Feedback</label>
+                                        
                                     </div>
                                 </div>
                             </div>

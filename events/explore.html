@@ -9,6 +9,138 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </head>
+
+
+<script>
+        
+  // Function to validate the form
+  function validateForm() {
+  // setting up the variables for the form elements
+  var title = document.getElementById("exampleInputEmail1");
+  var about = document.getElementById("exampleInputabout1");
+  var url = document.getElementById("exampleInputurl1");
+  var max = document.getElementById("exampleInputMaxAud1");
+  var date = document.getElementById("eventTime1");
+  var location = document.getElementById("exampleLocation");
+
+
+
+  // Validate the title
+  // making sure the title is between 3 and 32 characters long and contains only letters and numbers
+  if (title.value.search(/^[a-zA-Z0-9]{3,32}$/) == -1) {
+      // invalid title
+      // add the invalid class to the title input field
+      title.classList.add('is-invalid');
+      // focus on the title input field
+      title.focus();
+      // return false to prevent form submission
+      return false;
+  } else {
+      // valid title
+      // remove the invalid class and add the valid class
+      title.classList.remove('is-invalid');
+      title.classList.add('is-valid');
+  }
+
+  // Validate the about field
+        // check if the about field is not empty
+        if (about.value.trim() == "") {
+            // invalid  about field format
+            // display an error message
+            about.classList.add('is-invalid');
+            // set focus on the the about inpuit field
+            about.focus();
+            // return false to stop the form from submitting
+            return false;
+        } else {
+            // valid the about field format
+            about.classList.remove('is-invalid');
+            about.classList.add('is-valid');
+        }
+    
+
+  // Validate the url
+  // making sure the url is a valid url format
+  // using the URL constructor to check if the url is valid
+  try {
+    new URL(url.value); 
+    url.classList.remove('is-invalid');
+    url.classList.add('is-valid');
+    url.focus();
+} catch (_) {
+    url.classList.add('is-invalid');
+    url.focus();
+    return false;
+}
+
+  
+   // Validate the max audience 
+  // making sure the max audience a number between 1 to 9 digits long
+  if (max.value.search(/^[0-9]{1,6}$/) == -1) {
+      // invalid max audience number
+      // add the invalid class to the max audience input field
+      max.classList.add('is-invalid');
+      // focus on the max audience  input field
+      max.focus();
+      // return false to prevent form submission
+      return false;
+  } else {
+      // valid max audience number
+      // remove the invalid class and add the valid class
+      max.classList.remove('is-invalid');
+      max.classList.add('is-valid');
+  }
+
+
+
+  // Validate the date
+  // making sure the date is a valid date format and is not in the past
+  const today = new Date();
+  const selectedDate = new Date(date.value);
+  
+
+  // check if the selected date is in the past or if the date input is empty
+  if (selectedDate < today || !date.value) {
+      // invalid date
+      // add the invalid class to the date input field
+      date.classList.add('is-invalid');
+      // focus on the date input field
+      date.focus();
+      // return false to prevent form submission
+      return false;
+  } else {
+      // valid date
+      // remove the invalid class and add the valid class
+      date.classList.remove('is-invalid');
+      date.classList.add('is-valid');
+  }
+
+  // Validate the location
+  // making sure the location has 3 to 32 lettes or numbers)
+  if (location.value.search(/[a-zA-Z0-9]{3,32}/) == -1) {
+      // invalid location
+      // add the invalid class to the location input field
+      location.classList.add('is-invalid');
+      // focus on the location input field
+      location.focus();
+      // return false to prevent form submission
+      return false;
+  } else {
+      // valid location
+      // remove the invalid class and add the valid class
+      location.classList.remove('is-invalid');
+      location.classList.add('is-valid');
+  }
+
+  
+
+
+  // If all validations pass, return true to allow form submission
+  return true;
+  }
+</script>
+
+
 <body>
 
     <nav class="navbar navbar-expand-lg " style="background-color: white;">
@@ -34,7 +166,7 @@
                         <a class="nav-link" href="/events/explore.html">Explore</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
+                <form class="d-flex needs-validation"  onsubmit="return validateForm()" class="needs-validation" novalidate method="post" action="https://httpbin.org/post"  role="search" >
 <!-- Button trigger modal -->
 <button type="button" style="border: 1px solid #6518ff; color:#6518ff ;" class="btn m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Create New Event
@@ -49,37 +181,62 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Title</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
+              
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">About</label>
-                <input type="text" class="form-control" id="exampleInputabout1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Image URL</label>
-                <input type="text" class="form-control" id="exampleInputurl1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Maximum Audience</label>
-                <input type="text" class="form-control" id="exampleInputMaxAud1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Event Time</label>
-                <input type="date" class="form-control" id="eventTime1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Location</label>
-                <input type="text" class="form-control" id="exampleLocation">
-              </div>
+                  <label for="exampleInputEmail1" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div class="invalid-feedback">
+                    please enter a valid title between 3 and 26 characters long
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">About</label>
+                  <input type="text" class="form-control" id="exampleInputabout1" required>
+                  <div class="invalid-feedback">
+                    please enter a valid description of the event
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Image URL</label>
+                  <input type="url" class="form-control" id="exampleInputurl1" required>
+                  <div class="invalid-feedback">
+                    please enter a valid url
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Maximum Audience</label>
+                  <input type="text" class="form-control" id="exampleInputMaxAud1" required>
+                  <div class="invalid-feedback">
+                    please enter a valid number between 1 and 999999
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Event Time</label>
+                  <input type="date" class="form-control" id="eventTime1" required>
+                  <div class="invalid-feedback">
+                    please select a valid date
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Location</label>
+                  <input type="text" class="form-control" id="exampleLocation" required>
+                  <div class="invalid-feedback">
+                    please enter a valid location
+                  </div>
+                </div>
+
+                 
         </div>
         <div class="modal-footer">
           <button type="button" id="closemodal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" id="create-event" class="btn btn-primary">Create</button>
+
+          <!-- removed the "create-event" id to stop the form from closing when submitting -->
+          <button type="submit" id="" class="btn btn-primary">Create</button>  <!-- Changed this to sumbit -->
         </div>
       </div>
+      
     </div>
+    
   </div>
                     <a class="btn m-1" href="/auth/sign-in.html" style="border: 1px solid #6518ff; color:#6518ff ;">Register</a>
                     <a class="btn  m-1" href="/auth/login.html" style="background-color: #6518ff; color: white;">Login</a>
@@ -89,7 +246,7 @@
     </nav>
     <h2 class="my-3" style="margin: auto;width: 350px;">Explore events page</h2>
  <div class="input-group mb-3" class="my-3" style="margin: auto;width: 350px;">
-    <input  id="search-input" type="text" class="form-control" placeholder="Search for Event" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <input  id="search-input" type="text" class="form-control" placeholder="Search for Event" aria-label="Recipient's title" aria-describedby="button-addon2">
     <button class="btn" type="button" id="search-btn" style="background-color: #6518ff; color: white;">Search <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
       </svg></button>
