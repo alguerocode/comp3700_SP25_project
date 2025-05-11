@@ -14,39 +14,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg " style="background-color: white;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"> <img src="/public/logo.png" width="30px" height="30px" /></a>
-            <h2>Hajz</h2></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mx-5" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about-us.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events/explore.html">Explore</a>
-                    </li>
+    <?php include("../../shared/navbar.php"); ?>
 
-                </ul>
-                <form class="d-flex" role="search">
-                    <a class="btn m-1" href="/auth/sign-in.html"
-                        style="border: 1px solid #6518ff; color:#6518ff ;">Register</a>
-                    <a class="btn  m-1" href="/auth/login.html"
-                        style="background-color: #6518ff; color: white;">Login</a>
-                </form>
-            </div>
-        </div>
-    </nav>
     <div style="margin: auto; width: 300px;text-align: center;">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#6518ff" class="bi bi-calculator"
             viewBox="0 0 16 16">
@@ -63,7 +32,7 @@
         <!-- <p>Available Tickets: <span id="available-tickets">13</span></p> -->
         <p>One Ticket Price : $<span id="ticket-price">10</span></p>
         <a class="btn my-3" 
-        href="/funpage.html"
+        href="/funpage.php"
         style="border: 1px solid #6518ff; color:#6518ff ; margin: auto; width: 300px; margin: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-joystick mx-3" viewBox="0 0 16 16">
             <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2"/>
             <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23"/>
@@ -136,35 +105,8 @@
         </div>
 
     </div>
-    <footer class="h-100 footer" style="max-height: 400px; background-color: #f3f1f8; margin: 0; padding: 20px;" >
-        <div class="d-flex justify-content-center align-items-center" style="margin: 0; padding: 0; gap: 10px; font-size: 24px;">
-            <img src="/public/logo.png" width="50px" height="50px" style="margin:0;margin-bottom:10px"/></a>
-            <h2>Hajz</h2>
-        </div>
-        <table class="m-3 text-start p-0 w-100">
-            <tr>
-                <th class="text-start" style="font-size: 20px;">Social Accounts</th>
-                <th class="text-start" style="font-size: 20px;">Pages</th>
-                <th class="text-start" style="font-size: 20px;">Developers</th>
-            </tr>
-            <tr>
-                <td><a class="text-dark text-decoration-none" href="https://www.facebook.com">Facebook</a></td>
-                <td><a class="text-dark text-decoration-none" href="/about-us.html">About Us</a></td>
-                <td>Salah Alhashmi</td>
-            </tr>
-            <tr>
-                <td><a class="text-dark text-decoration-none" href="https://www.twitter.com">Twitter</a> </td>
-                <td><a class="text-dark text-decoration-none" href="/contact.html">Contact</a></td>
-                <td>Qusai Alkalbani</td>
-            </tr>
-            <tr>
-                <td><a class="text-dark text-decoration-none" href="https://www.instagram.com">Instagram</a> </td>
-                <td><a class="text-dark text-decoration-none" href="/index.html">Home</a></td>
-                <td>Al-tariq Alhajri</td>
-            </tr>
-        </table>
-        <p class="m-0 p-0 text-center" style="font-size: 16px;">&copy; 2023 Event Ticket System. All rights reserved.</p>
-    </footer>
+    <?php include("../../shared/footer.php"); ?>
+
     <script src="./event-calculator.js" />
 </body>
 

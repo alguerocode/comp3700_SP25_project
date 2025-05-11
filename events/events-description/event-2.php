@@ -11,69 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg " style="background-color: white;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"> <img src="/public/logo.png" width="30px" height="30px" /></a>
-            <h2>Hajz</h2></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mx-5" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about-us.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events/explore.html">Explore</a>
-                    </li>
+    <?php include("../../shared/navbar.php"); ?>
 
-                </ul>
-                <form class="d-flex" role="search">
-                    <a class="btn m-1" href="/auth/sign-in.html" style="border: 1px solid #6518ff; color:#6518ff ;">Register</a>
-                    <a class="btn  m-1" href="/auth/login.html" style="background-color: #6518ff; color: white;">Login</a>
-                </form>
-            </div>
-        </div>
-    </nav>
     <div class="event d-flex flex-column align-items-center justify-content-center gap-3 mx-auto my-4" style="width: 95%; max-width: 700px;">
         <!-- here dynamic content rendered -->
     </div>
-    <footer class="h-100 footer" style="max-height: 400px; background-color: #f3f1f8; margin: 0; padding: 20px;" >
-        <div class="d-flex justify-content-center align-items-center" style="margin: 0; padding: 0; gap: 10px; font-size: 24px;">
-            <img src="/public/logo.png" width="50px" height="50px" style="margin:0;margin-bottom:10px"/></a>
-            <h2>Hajz</h2>
-        </div>
-        <table class="m-3 text-start p-0 w-100">
-            <tr>
-                <th class="text-start" style="font-size: 20px;">Social Accounts</th>
-                <th class="text-start" style="font-size: 20px;">Pages</th>
-                <th class="text-start" style="font-size: 20px;">Developers</th>
-            </tr>
-            <tr>
-                <td><a class="text-dark text-decoration-none" href="https://www.facebook.com">Facebook</a></td>
-                <td><a class="text-dark text-decoration-none" href="/about-us.html">About Us</a></td>
-                <td>Salah Alhashmi</td>
-            </tr>
-            <tr>
-                <td><a class="text-dark text-decoration-none" href="https://www.twitter.com">Twitter</a> </td>
-                <td><a class="text-dark text-decoration-none" href="/contact.html">Contact</a></td>
-                <td>Qusai Alkalbani</td>
-            </tr>
-            <tr>
-                <td><a class="text-dark text-decoration-none" href="https://www.instagram.com">Instagram</a> </td>
-                <td><a class="text-dark text-decoration-none" href="/index.html">Home</a></td>
-                <td>Al-tariq Alhajri</td>
-            </tr>
-        </table>
-        <p class="m-0 p-0 text-center" style="font-size: 16px;">&copy; 2023 Event Ticket System. All rights reserved.</p>
-    </footer>
+    <?php include("../../shared/footer.php"); ?>
     <script>
         // setup object of event details
         const eventDetails =     {
@@ -83,7 +26,7 @@
         eventTime: "3/2/2025 6:30am",
         location: "SQU Football Field",
         imgUrl:"/public/events/football.jpg",
-        link:"events-description/event-2.html",
+        link:"events-description/event-2.php",
         availableTickets: 360
     }
     </script>

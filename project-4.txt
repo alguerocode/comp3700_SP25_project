@@ -1,10 +1,10 @@
 salah
- - convert all pages to php and include footer & navbar as seperate files and include in every page 
+ - [-] convert all pages to php and include footer & navbar as seperate files and include in every page 
  - 2 - create and design sql tables
 	- user table
 	- event table
 	- tickets table
-	- quetionair table	
+	- quetionair table - suspenned
  - handle display events ( use array of event object class)
  - handle create event  ( use array of event object class)
  - handle update event information

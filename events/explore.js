@@ -8,7 +8,7 @@ const eventsData = [
     eventTime: "12/3/2025 10:00pm",
     location: "Lecutre Hall 4",
     imgUrl: "/public/events/conference.jpg",
-    link: "events-description/event-1.html",
+    link: "events-description/event-1.php",
   },
   {
     title: "Soccer Cup",
@@ -18,7 +18,7 @@ const eventsData = [
     eventTime: "3/2/2025 6:30am",
     location: "SQU Football Field",
     imgUrl: "/public/events/football.jpg",
-    link: "events-description/event-2.html",
+    link: "events-description/event-2.php",
   },
   {
     title: "Business Training",
@@ -28,7 +28,7 @@ const eventsData = [
     eventTime: "3/5/2026 3:00am",
     location: "Self-Learning Center",
     imgUrl: "/public/events/training.jpg",
-    link: "events-description/event-3.html",
+    link: "events-description/event-3.php",
   },
 ];
 
@@ -242,7 +242,7 @@ createBtn.addEventListener("click", (e) => {
     eventTime: eventTimeInput.value,
     location: locationInput.value,
     imgUrl: imageUrlInpt.value,
-    link: "events-description/event-2.html",
+    link: "events-description/event-2.php",
   });
   
   ulElement.innerHTML += buildEventCard(eventData);
