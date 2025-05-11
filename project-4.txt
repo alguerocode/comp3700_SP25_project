@@ -1,0 +1,63 @@
+salah
+ - convert all pages to php and include footer & navbar as seperate files and include in every page 
+ - 2 - create and design sql tables
+	- user table
+	- event table
+	- tickets table
+	- quetionair table	
+ - handle display events ( use array of event object class)
+ - handle create event  ( use array of event object class)
+ - handle update event information
+ - handle search for event  ( use array of event object class)
+qusai
+ - 1- VALIDATING TWO XHTML FORMS USING JAVASCRIPT FUNCTIONS. ( see pdf )
+ - 3 (a) just send the data to same file with php & with same js validation
+	 - store the data (qutionanir / user signin )	
+	 - check the data (login)
+
+altariq
+ - display a signle event url /explore/event-id 
+	where event id will use it to get the event information from database 
+	and display it via php
+        - make the event data in php class object before render it (as pdf sayed)
+ - ticket calculator and get tickets
+	- do get ticket by user id if the user have event ticket display the ticket id under calculator
+	- add delete query to delete the ticket	
+	- some checks:
+		- check if event have tickets before buy buy using (select count())
+	
+
+wait for this
+- I will design the database & create it
+
+
+will ask user
+- use cookies to store user id
+- route protecting
+
+
+user table
+id string
+email unique string
+password string
+
+
+event table
+id string
+title string
+description string
+max_aud number
+time date
+img_url string
+location string
+// get the available tickets by max_aud - get tickets by sql query
+
+
+ticket table
+id string
+userid string => which from userid
+eventid from => event id
+count int => number of tickets
+food_service boolean
+vip_tickets => boolean
+children_tickets => boolean
