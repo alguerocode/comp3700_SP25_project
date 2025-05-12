@@ -4,18 +4,19 @@ salah
 	- user table
 	- event table
 	- tickets table
-	- quetionair table - suspenned
+	- quetionair table - suspened
  - handle display events ( use array of event object class)
  - handle create event  ( use array of event object class)
  - handle update event information
  - handle search for event  ( use array of event object class)
-qusai
+
+qusai ( main work in authentication and creating users and protecting routes)
  - 1- VALIDATING TWO XHTML FORMS USING JAVASCRIPT FUNCTIONS. ( see pdf )
  - 3 (a) just send the data to same file with php & with same js validation
 	 - store the data (qutionanir / user signin )	
 	 - check the data (login)
 
-altariq
+altariq (main work in tickets)
  - display a signle event url /explore/event-id 
 	where event id will use it to get the event information from database 
 	and display it via php
@@ -25,10 +26,12 @@ altariq
 	- add delete query to delete the ticket	
 	- some checks:
 		- check if event have tickets before buy buy using (select count())
+
+note
+- if you can do good design please do it
 	
 
 wait for this
-- I will design the database & create it
 
 
 will ask user
@@ -61,3 +64,11 @@ count int => number of tickets
 food_service boolean
 vip_tickets => boolean
 children_tickets => boolean
+
+
+
+- run mysql database & use the uri to connect
+- add connection php code to readme.md
+
+- work on create a temporary user in server
+- star worker in creating events => display events => search events
