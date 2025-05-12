@@ -29,7 +29,7 @@ altariq (main work in tickets)
 
 note
 - if you can do good design please do it
-	
+
 
 wait for this
 
@@ -72,3 +72,4 @@ children_tickets => boolean
 
 - work on create a temporary user in server
 - star worker in creating events => display events => search events
+

@@ -1,3 +1,9 @@
+
+<?php 
+include("../lib/connect-db.php");
+$stmt = $conn->prepare("SELECT * FROM hz_event");
+$stmt->execute();
+?>
 <html lang="en">
 
 <head>
@@ -135,6 +141,43 @@
       </svg></button>
   </div>
   <ul id="events-list" class="d-flex flex-wrap">
+<?php 
+          foreach($stmt->fetchAll() as $row) {
+             echo '<div  class="card m-3" style="width:30rem;height:50rem">
+            <img class="card-img-top" src="'. $row['img_url'].'" width="350" height="370"/>
+            <div>
+
+
+            <div class="card-body">
+            <h2 class="card-title">'.$row["title"] .'</h2>
+            <p class="card-text">'. $row['description'].'<p>
+            
+            <div class="card my-3" >
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
+                Maximum Audienc: '. $row['max_aud'].'
+                </li>
+                <li class="list-group-item">
+                              <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
+              Event Time: <time>'. $row['time'].'</time>  
+                </li>
+                <li class="list-group-item">
+                <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
+                location: '. $row['location'].'</li>
+            </ul>
+            </div>
+            <a href="/events/event-description.php?id='. $row['id'].'">
+                <button class="btn btn-primary">View</button>
+            </a>
+            </div>
+            </div>
+        </div>';
+      }
+        
+        ;
+      
+?>
 
   </ul>
 

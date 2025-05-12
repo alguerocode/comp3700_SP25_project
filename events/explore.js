@@ -1,36 +1,36 @@
 // add events data to display it in explore page
-const eventsData = [
-  {
-    title: "Technology Conference",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
-    maximumAudience: 21300,
-    eventTime: "12/3/2025 10:00pm",
-    location: "Lecutre Hall 4",
-    imgUrl: "/public/events/conference.jpg",
-    link: "events-description/event-1.php",
-  },
-  {
-    title: "Soccer Cup",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
-    maximumAudience: 5000,
-    eventTime: "3/2/2025 6:30am",
-    location: "SQU Football Field",
-    imgUrl: "/public/events/football.jpg",
-    link: "events-description/event-2.php",
-  },
-  {
-    title: "Business Training",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
-    maximumAudience: 50,
-    eventTime: "3/5/2026 3:00am",
-    location: "Self-Learning Center",
-    imgUrl: "/public/events/training.jpg",
-    link: "events-description/event-3.php",
-  },
-];
+// const eventsData = [
+//   {
+//     title: "Technology Conference",
+//     description:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
+//     maximumAudience: 21300,
+//     eventTime: "12/3/2025 10:00pm",
+//     location: "Lecutre Hall 4",
+//     imgUrl: "/public/events/conference.jpg",
+//     link: "events-description/event-1.php",
+//   },
+//   {
+//     title: "Soccer Cup",
+//     description:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
+//     maximumAudience: 5000,
+//     eventTime: "3/2/2025 6:30am",
+//     location: "SQU Football Field",
+//     imgUrl: "/public/events/football.jpg",
+//     link: "events-description/event-2.php",
+//   },
+//   {
+//     title: "Business Training",
+//     description:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur asperiores tempora doloribus praesentium voluptate soluta? Modi reprehenderit facilis nulla at, aliquid minima dolor voluptatem asperiores ratione, exercitationem labore in!",
+//     maximumAudience: 50,
+//     eventTime: "3/5/2026 3:00am",
+//     location: "Self-Learning Center",
+//     imgUrl: "/public/events/training.jpg",
+//     link: "events-description/event-3.php",
+//   },
+// ];
 
 // this function give description of events
 // output a html of event card to render it inside unoredered list
