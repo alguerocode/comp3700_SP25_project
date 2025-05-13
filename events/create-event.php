@@ -1,47 +1,79 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hajz | Create Event</title>
-    <!-- <link rel="stylesheet" href="/global.css"> -->
-    <!-- <link rel="stylesheet" href="/events/create-event.css"> -->
-    <link rel="icon" type="image/x-icon" href="/public/logo.png">
+        <form class="d-flex needs-validation" onsubmit="return validateForm()" class="needs-validation" novalidate
+          method="post" action="https://httpbin.org/post" role="search">
+          <!-- Button trigger modal -->
+          <button type="button" style="border: 1px solid #6518ff; color:#6518ff ;" class="btn m-1"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create New Event
+          </button>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-</head>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Create New Website</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-<body>
-    <?php include("shared/navbar.php"); ?>
-    <div class="main">
-    
-        <div id="container" >
-        <form method="post"   action="https://httpbin.org/get">
-    
-            <h3>Create Custom Event</h3>            
-           
-            
-            <p > Event Name: <input type="text" name="eventName"  id="boxes" required> </p>
-            <p > Event Date: <input type="date" name="eventDate"  id="boxes" required> </p>
-            <p > Event Time: <input type="time" name="eventTime"  id="boxes" required> </p>
-            <p > Event Location: <input type="text" name="eventLocation"  id="boxes" required> </p>
-            <p > Event Description: <textarea name="eventDescription" rows = "9" required> </textarea> </p>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      required>
+                    <div class="invalid-feedback">
+                      please enter a valid title between 3 and 26 characters long
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">About</label>
+                    <input type="text" class="form-control" id="exampleInputabout1" required>
+                    <div class="invalid-feedback">
+                      please enter a valid description of the event
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Image URL</label>
+                    <input type="url" class="form-control" id="exampleInputurl1" required>
+                    <div class="invalid-feedback">
+                      please enter a valid url
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Maximum Audience</label>
+                    <input type="text" class="form-control" id="exampleInputMaxAud1" required>
+                    <div class="invalid-feedback">
+                      please enter a valid number between 1 and 999999
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Event Time</label>
+                    <input type="date" class="form-control" id="eventTime1" required>
+                    <div class="invalid-feedback">
+                      please select a valid date
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="exampleLocation" required>
+                    <div class="invalid-feedback">
+                      please enter a valid location
+                    </div>
+                  </div>
 
 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="closemodal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+                  <!-- removed the "create-event" id to stop the form from closing when submitting -->
+                  <button type="submit" id="create-event" class="btn btn-primary">Create</button> <!-- Changed this to sumbit -->
+                </div>
+              </div>
 
+            </div>
 
-            <p><button type="submit" id="button" >Create</button></p>
+          </div>
+          <a class="btn m-1" href="/auth/sign-in.html" style="border: 1px solid #6518ff; color:#6518ff ;">Register</a>
+          <a class="btn  m-1" href="/auth/login.html" style="background-color: #6518ff; color: white;">Login</a>
         </form>
-        </div>
-        <h4>Or Use  <a href="explore.html" id="aLink">Preset Events</a></h4>
-        
-    </div> 
-   
-
-    
-
-    <?php include("shared/footer.php"); ?>
-</body>
-
-</html>
