@@ -29,6 +29,17 @@ CREATE TABLE hz_ticket (
     children_tickets BOOLEAN DEFAULT FALSE
 );
 
+-- Feedback Table
+CREATE TABLE hz_feedback (
+    email TEXT UNIQUE NOT NULL,
+    category TEXT NOT NULL,
+    feedback TEXT NOT NULL, 
+    rating INT NOT NULL 
+);
+
+Insert into hz_feedback (email, category, feedback, rating) VALUES
+('stest1@g.com', 'testFeedback', 'good', 5),
+('stest2@g.com', 'testFeedback', 'bad', 2);
 
 -- -- drop tables ( use it if their changes in tables)
 -- drop table hz_user;

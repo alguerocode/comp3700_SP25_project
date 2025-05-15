@@ -1,43 +1,43 @@
 <?php
-                    ob_start();
-                    if($_SERVER["REQUEST_METHOD"] === "POST") {
-                        $name = $_POST["username"];
-                        $password = $_POST["password"];
-                        
-                        include("../lib/connect-db.php");
+    ob_start();
+    if($_SERVER["REQUEST_METHOD"] === "POST") {
+        $name = $_POST["username"];
+        $password = $_POST["password"];
+        
+        include("../lib/connect-db.php");
 
-                        if (!$conn) {
-                            die("Connection failed: " . mysqli_connect_error());
-                        }
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
 
-                        
-                        
+        
+        
 
-                        $stmt = $conn->prepare("SELECT * FROM `hz_user` WHERE `email` =  '$name' AND `password` = '$password';");
-                        $stmt->execute();
-                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = $conn->prepare("SELECT * FROM `hz_user` WHERE `email` =  '$name' AND `password` = '$password';");
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        if ($result && isset($result['id'])) {
-                            $error_message =  "<h1 class='text-success'> ID: " . $result['id'] . "</h1>";
-                            include("../lib/cookie.php");
+        if ($result && isset($result['id'])) {
+            $error_message =  "<h1 class='text-success'> ID: " . $result['id'] . "</h1>";
+            include("../lib/cookie.php");
 
-                            createCookie($result['id']);
-                            header("Location: ../events/explore.php");
-
-
+            createCookie($result['id']);
+            header("Location: ../events/explore.php");
 
 
-                            
 
-                            
-                        } else {
-                            $error_message = "<p class='text-danger'> Account Not Found </p>";
 
-                            
-                        }
-                    }
-                    
-                    ?>
+            
+
+            
+        } else {
+            $error_message = "<p class='text-danger'> Account Not Found </p>";
+
+            
+        }
+    }
+    
+?>
 
 <html lang="en">
     

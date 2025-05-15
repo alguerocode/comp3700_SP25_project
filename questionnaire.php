@@ -180,7 +180,7 @@
                 <img src="public/logo.png" width="100" alt="">
 
                 <form id="qForm" onsubmit="return validateForm()" class="needs-validation p-5" novalidate method="post"
-                    action="#">
+                    action="feedback.php">
 
                     <div class="row">
                         <div class="col-sm-1">
@@ -221,7 +221,7 @@
                                 <div class="p-2 mb-2">
 
                                     <h6>Select the correct category of your feedback:</h6>
-                                    <select name="groceries" size="1" class="form-select rounded-4 mb-4" id="category"
+                                    <select name="type" size="1" class="form-select rounded-4 mb-4" id="category"
                                         required>
                                         <option value="" disabled selected>Select a category</option>
                                         <option value="general">General Feedback</option>
@@ -249,20 +249,20 @@
 
                             <label class="p-2 mb-2">Rate Us: </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio1"
-                                    value="1star" required>
+                                <input class="form-check-input" type="radio" name="rating" id="radio1"
+                                    value="1" required>
                                 <label class="form-check-label" for="inlineRadio1">1</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio2"
-                                    value="2star" required>
+                                <input class="form-check-input" type="radio" name="rating" id="radio2"
+                                    value="2" required>
                                 <label class="form-check-label" for="inlineRadio2">2</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio3"
-                                    value="3star" required>
+                                <input class="form-check-input" type="radio" name="rating" id="radio3"
+                                    value="3" required>
                                 <label class="form-check-label" for="inlineRadio3">3</label>
                             </div>
 
@@ -276,7 +276,11 @@
                                 <button type="submit"
                                     class="btn btn-primary p-2 mt-3 mb-3 rounded-4 w-100">Submit</button>
                             </div>
-
+                            <?php
+                            if (isset($_GET['confirm'])) {
+                                echo "<div class='alert alert-success'>" . htmlspecialchars($_GET['confirm']) . "</div>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </form>
