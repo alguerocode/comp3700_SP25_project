@@ -14,23 +14,26 @@ setcookie("theme", "", time() - 3600, "/");
 
 
 // create cookie
-function createCookie(&id) {
+function createCookie($id) {
+    global $cookie_name, $userid;
     setcookie($cookie_name, $id, time() + (86400 * 30), "/");
     $userid = $id;
 }
 
 // delete cookie
 function deleteCookie() {
+    global $cookie_name;
     setcookie($cookie_name, "", time() - 3600, "/");
 }
 
 // get cookie
 function getCookieUserid() {
+    global $cookie_name;
     if (isset($_COOKIE[$cookie_name])) {
         $userid = $_COOKIE[$cookie_name]; 
         return $_COOKIE[$cookie_name];
     }
-    return ''
+    return '';
 }
 
 
