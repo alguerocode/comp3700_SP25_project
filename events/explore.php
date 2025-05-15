@@ -31,7 +31,7 @@ $stmt->execute();
 </head>
 
 
-
+ <?php include("../shared/navbar.php"); ?> <!--qusai added this temporarely  -->
 <body>
 
   <nav class="navbar navbar-expand-lg " style="background-color: white;">

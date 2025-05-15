@@ -1,3 +1,42 @@
+<?php
+
+    ob_start();
+    if($_SERVER["REQUEST_METHOD"] === "POST" && ( !empty( $_POST["username"]) ||!empty( $_POST["password"] ))) {
+
+        $error_message = "";
+        $works = '';
+
+        include("../lib/connect-db.php");
+
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        $email = $_POST["username"];
+        $password = $_POST["password"];
+
+
+        $stmt = $conn ->prepare("SELECT * FROM `hz_user` WHERE `email` =  '$email' AND `password` = '$password';");
+        $stmt -> execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ( $result) {
+            $error_message = 'Account already exists';
+        } 
+        else {
+            $stmt = $conn->prepare("INSERT INTO `hz_user`( `email`, `password`) VALUES ('$email','$password');");
+            $stmt->execute();
+            $works = 'Account created!';
+            
+
+        }
+
+        
+
+    }
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,7 +104,7 @@
 
     // Validate username
     // making sure the username is between 3 and 16 characters long and contains only letters and numbers
-    if (uname.value.search(/^[a-zA-Z0-9]{3,16}$/) == -1) {
+    if (uname.value.search(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/) == -1) {
         // invalid username
         // add the invalid class to the username input field
         uname.classList.add('is-invalid');
@@ -136,7 +175,7 @@
 </script>
 <body>
 
-        <?php include("shared/navbar.php"); ?>
+        <?php include("../shared/navbar.php"); ?>
 
     <div class="container-fluid text-center w-100  p-5 ">
 
@@ -145,7 +184,8 @@
             
             <div class="container col-sm-3 rounded-4 border shadow ">
 
-                <form  id="signupForm" onsubmit="return validateForm()" class="needs-validation" novalidate method="post" action="https://httpbin.org/post" >
+                <form  id="signupForm" onsubmit="return validateForm()" class="needs-validation" novalidate method="post" 
+                action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  >
                 <div class="mt-4 mb-4">
                     
                     <img src="/public/logo.png" width="75" alt="Logo">
@@ -155,7 +195,7 @@
                 
                 <div>
                     <h1 class="">Hajz</h1>
-                    <p class="text-muted">Please enter your name & Password</p>
+                    <p class="text-muted">Please enter your Email & Password</p>
                 </div>
                 <div class="row">
                     <div class="col-1">
@@ -164,9 +204,9 @@
                         
                         <div class="form-floating mb-3 mt-3">
                 
-                            <input type="text" class="form-control rounded-4 " name="username" id="uName" placeholder="username" required>
-                            <label for="uName" class="form-label">Name</label>
-                            <div class="invalid-feedback">Please enter a valid username.</div>
+                            <input type="text" class="form-control rounded-4 " name="username" id="uName" placeholder="Email" required>
+                            <label for="uName" class="form-label">Email</label>
+                            <div class="invalid-feedback">Please enter a valid Email.</div>
                             
                         </div>
                         <div class="form-floating mb-4 ">
@@ -193,12 +233,20 @@
                         </div>
                     </div>
                 </div> 
-                <p>Already have an account? <a href="login.html">Log In</a></p>
+                <?php if (!empty($error_message)): ?>
+                        <p class="text-danger"><?= $error_message ?></p>
+                <?php endif; ?>
+                <?php if (!empty($works)): ?>
+                        <p class="text-success"><?= $works ?> <a href="login.php">Log In</a></p>
+                <?php endif; ?>
+                <p>Already have an account? <a href="login.php">Log In</a></p>
                 </form>
             </div>  
         </div>
     </div>
-    <?php include("shared/footer.php"); ?>
+
+
+    <?php include("../shared/footer.php"); ?>
     
 </body>
 </html>

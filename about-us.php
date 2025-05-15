@@ -1,3 +1,6 @@
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +25,7 @@
         // JavaScript array to dynamically create the table
         const aboutDetails = [
           { item: "Our Names:", information: "Salah Alhashmi" },
-          { item: "", information: "Qusai Al Something" },
+          { item: "", information: "Qusai Al Kalbani" },
           { item: "", information: "Al-tariq Alhajri" },
           { item: "Phone Number:", information: "+968 7777 7777" },
           { item: "Purpose:", information: "To innovate and deliver high-quality solutions" },

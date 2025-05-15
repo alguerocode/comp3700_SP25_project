@@ -167,11 +167,10 @@
 
 </script>
 
-
+<?php include("shared/navbar.php"); ?>
 <body>
-    <?php include("shared/navbar.php"); ?>
 
-
+    
     <div class="container-fluid text-center w-75  p-5 ">
 
         <div class="row content ">
@@ -181,7 +180,7 @@
                 <img src="public/logo.png" width="100" alt="">
 
                 <form id="qForm" onsubmit="return validateForm()" class="needs-validation p-5" novalidate method="post"
-                    action="https://httpbin.org/post">
+                    action="#">
 
                     <div class="row">
                         <div class="col-sm-1">
