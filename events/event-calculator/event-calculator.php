@@ -107,7 +107,8 @@
     </div>
     <?php include("../../shared/footer.php"); ?>
 
-    <script src="./event-calculator.js" />
+    <script src="./event-calculator.js" ></script>   <!--  fixed -->
+
 </body>
 
 </html>
