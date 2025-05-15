@@ -2,9 +2,7 @@
 
         // this works
         include($_SERVER['DOCUMENT_ROOT'] . "/lib/cookie.php");
-
-    
-        if (isset($_COOKIE['name']) && $_COOKIE['name'] !== null){
+        if (isset($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] !== null){
             $_SESSION['cookie'] = getCookieUserid();
 
         }
@@ -48,7 +46,7 @@
                     </li>
 
                 </ul>
-                <?php if (isset($_SESSION['cookie']) && $_SESSION['cookie'] !== null): ?>
+                <?php if (isset($_SESSION['cookie']) && $_SESSION['cookie'] != null): ?>
 
                 <form class="d-flex" role="search">
                     <a class="btn m-1 " href="/auth/logout.php" style="border: 1px solid #6518ff; color:#6518ff ;"  >logout</a>

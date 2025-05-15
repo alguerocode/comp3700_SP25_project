@@ -1,7 +1,7 @@
 <?php 
 
 $is_auth = false;
-$cookie_name = 'name';
+$cookie_name = 'userid';
 $userid = '';
 
 // Get a cookie
