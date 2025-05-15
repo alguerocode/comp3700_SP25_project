@@ -1,14 +1,48 @@
-
-<?php 
+<?php
 include("../lib/connect-db.php");
+include("../lib/cookie.php");
+
+$userid = getCookieUserid();
+
+// create event
+function test_input($data)
+{
+  $data = trim($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+$title = $about = $img_url = $time = $max_aud = $location = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  $title = test_input($_POST["title"]);
+  $about = test_input($_POST["about"]);
+  $img_url = test_input($_POST["img-url"]);
+  $max_aud = test_input($_POST["max-aud"]);
+  $location = test_input($_POST["location"]);
+  $time = test_input($_POST["time"]);
+
+  $stmt = $conn->prepare("
+            INSERT INTO hz_event (title, description, img_url, max_aud, location, time, userid)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ");
+  $stmt->execute([$title, $about, $img_url, $max_aud, $location, $time, $userid]);
+  header("Location: /events/explore.php");
+
+}
+
 
 $search = '';
 $stmt = null;
-if(isset($_GET["search"]) != NULL && strlen($_GET["search"]) > 0) {
+
+
+
+
+if (isset($_GET["search"]) != NULL && strlen($_GET["search"]) > 0) {
   $search = $_GET["search"];
   $stmt = $conn->prepare("SELECT * FROM hz_event WHERE LOWER(title) LIKE LOWER(:search)");
   $sql_search = "%" . $_GET["search"] . "%";
-  $stmt->bindParam(':search', $sql_search );
+  $stmt->bindParam(':search', $sql_search);
 } else {
   $stmt = $conn->prepare("SELECT * FROM hz_event");
 }
@@ -57,68 +91,66 @@ $stmt->execute();
             <a class="nav-link" href="/events/explore.php">Explore</a>
           </li>
         </ul>
-          <?php include("./create-event.php"); ?>
+        <?php include("./create-event.php"); ?>
       </div>
     </div>
   </nav>
   <h2 class="my-3" style="margin: auto;width: 350px;">Explore events page</h2>
-      <form action="explore.php" method="GET">
-  <div class="input-group mb-3" class="my-3" style="margin: auto;width: 350px;">
+  <form action="explore.php" method="GET">
+    <div class="input-group mb-3" class="my-3" style="margin: auto;width: 350px;">
 
-    <input id="search-input" type="text" name="search" class="form-control" placeholder="Search for Event"
-      value="<?php echo $search?>"
-      aria-label="Recipient's title" aria-describedby="button-addon2">
-    <button class="btn" type="submit" id="search-btn" style="background-color: #6518ff; color: white;">Search <svg
-        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-        viewBox="0 0 16 16">
-        <path
-          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-      </svg></button>
-  </div>
-        </form>
+      <input id="search-input" type="text" name="search" class="form-control" placeholder="Search for Event"
+        value="<?php echo $search ?>"
+        aria-label="Recipient's title" aria-describedby="button-addon2">
+      <button class="btn" type="submit" id="search-btn" style="background-color: #6518ff; color: white;">Search <svg
+          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg></button>
+    </div>
+  </form>
 
   <ul id="events-list" class="d-flex flex-wrap">
-<?php 
-          foreach($stmt->fetchAll() as $row) {
-             echo '<div  class="card m-3" style="width:30rem;height:50rem">
-            <img class="card-img-top" src="'. $row['img_url'].'" width="350" height="370"/>
+    <?php
+    foreach ($stmt->fetchAll() as $row) {
+      echo '<div  class="card m-3" style="width:30rem;height:50rem">
+            <img class="card-img-top" src="' . $row['img_url'] . '" width="350" height="370"/>
             <div>
 
 
             <div class="card-body">
-            <h2 class="card-title">'.$row["title"] .'</h2>
-            <p class="card-text">'. $row['description'].'<p>
+            <h2 class="card-title">' . $row["title"] . '</h2>
+            <p class="card-text">' . $row['description'] . '<p>
             
             <div class="card my-3" >
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                 <img class="icon" src="/public/events/group.png" width="10px" height="10px"/>
-                Maximum Audienc: '. $row['max_aud'].'
+                Maximum Audienc: ' . $row['max_aud'] . '
                 </li>
                 <li class="list-group-item">
                               <img class="icon" src="/public/events/calendar.png" width="10px" height="10px"/>
-              Event Time: <time>'. $row['time'].'</time>  
+              Event Time: <time>' . $row['time'] . '</time>  
                 </li>
                 <li class="list-group-item">
                 <img class="icon" src="/public/events/location.png" width="10px" height="10px"/>
-                location: '. $row['location'].'</li>
+                location: ' . $row['location'] . '</li>
             </ul>
             </div>
-            <a href="/events/event-description.php?id='. $row['id'].'">
+            <a href="/events/event-description.php?id=' . $row['id'] . '">
                 <button class="btn btn-primary">View</button>
             </a>
             </div>
             </div>
         </div>';
-      }
-        
-        ;
-      
-?>
+    };
+
+    ?>
 
   </ul>
 
-    <?php include("../shared/footer.php"); ?>
+  <?php include("../shared/footer.php"); ?>
   <script src="./explore.js"></script>
 </body>
 

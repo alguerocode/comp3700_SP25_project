@@ -15,9 +15,7 @@ setcookie("theme", "", time() - 3600, "/");
 
 // create cookie
 function createCookie($id) {
-    global $cookie_name;
-    global $userid;
-
+    global $cookie_name, $userid;
     setcookie($cookie_name, $id, time() + (86400 * 30), "/");
     $userid = $id;
 }

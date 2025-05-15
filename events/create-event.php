@@ -1,5 +1,5 @@
-        <form class="d-flex needs-validation" onsubmit="return validateForm()" class="needs-validation" novalidate
-          method="post" action="https://httpbin.org/post" role="search">
+        <form class="d-flex needs-validation" id="create-event-form" class="needs-validation" novalidate
+          method="post" action="/events/explore.php" role="search">
           <!-- Button trigger modal -->
           <button type="button" style="border: 1px solid #6518ff; color:#6518ff ;" class="btn m-1"
             data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -19,7 +19,7 @@
 
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                       required>
                     <div class="invalid-feedback">
                       please enter a valid title between 3 and 26 characters long
@@ -27,35 +27,35 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">About</label>
-                    <input type="text" class="form-control" id="exampleInputabout1" required>
+                    <input type="text" name="about" class="form-control" id="exampleInputabout1" required>
                     <div class="invalid-feedback">
                       please enter a valid description of the event
                     </div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Image URL</label>
-                    <input type="url" class="form-control" id="exampleInputurl1" required>
+                    <input type="url" name="img-url" class="form-control" id="exampleInputurl1" required>
                     <div class="invalid-feedback">
                       please enter a valid url
                     </div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Maximum Audience</label>
-                    <input type="text" class="form-control" id="exampleInputMaxAud1" required>
+                    <input type="text" name="max-aud" class="form-control" id="exampleInputMaxAud1" required>
                     <div class="invalid-feedback">
                       please enter a valid number between 1 and 999999
                     </div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Event Time</label>
-                    <input type="date" class="form-control" id="eventTime1" required>
+                    <input type="date" name="time" class="form-control" id="eventTime1" required>
                     <div class="invalid-feedback">
                       please select a valid date
                     </div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Location</label>
-                    <input type="text" class="form-control" id="exampleLocation" required>
+                    <input type="text" name="location" class="form-control" id="exampleLocation" required>
                     <div class="invalid-feedback">
                       please enter a valid location
                     </div>
