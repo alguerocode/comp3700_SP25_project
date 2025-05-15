@@ -1,3 +1,44 @@
+<?php
+                    ob_start();
+                    if($_SERVER["REQUEST_METHOD"] === "POST") {
+                        $name = $_POST["username"];
+                        $password = $_POST["password"];
+                        
+                        include("../lib/connect-db.php");
+
+                        if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                        }
+
+                        
+                        
+
+                        $stmt = $conn->prepare("SELECT * FROM `hz_user` WHERE `email` =  '$name' AND `password` = '$password';");
+                        $stmt->execute();
+                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        if ($result && isset($result['id'])) {
+                            $error_message =  "<h1 class='text-success'> ID: " . $result['id'] . "</h1>";
+                            include("../lib/cookie.php");
+
+                            createCookie($result['id']);
+                            header("Location: ../events/explore.php");
+
+
+
+
+                            
+
+                            
+                        } else {
+                            $error_message = "<p class='text-danger'> Account Not Found </p>";
+
+                            
+                        }
+                    }
+                    
+                    ?>
+
 <html lang="en">
     
 <head>
@@ -56,56 +97,68 @@
 
         // Function to validate the form
         function validateForm() {
-        // setting up the variables for the form elements
-        var uname = document.getElementById("uName");
-        var pass = document.getElementById("pWord");
+            // setting up the variables for the form elements
+            var uname = document.getElementById("uName");
+            var pass = document.getElementById("pWord");
 
-        // Validate username
-        // making sure the username is between 3 and 16 characters long and contains only letters and numbers
-        if (uname.value.search(/^[a-zA-Z0-9]{3,16}$/) == -1) {
-            // if the username is invalid, add the is-invalid class and focus on the input field
-            uname.classList.add('is-invalid');
-            uname.focus();
-            // return false to prevent form submission
-            return false;
-        } else {
-            // if the username is valid, remove the is-invalid class and add the is-valid class
-            uname.classList.remove('is-invalid');
-            uname.classList.add('is-valid');
-        }
+            // Validate username
+            // making sure the username is between 3 and 16 characters long and contains only letters and numbers
+            if (uname.value.search(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/) == -1) {
+                // if the username is invalid, add the is-invalid class and focus on the input field
+                uname.classList.add('is-invalid');
+                uname.focus();
+                // return false to prevent form submission
+                return false;
+            } else {
+                // if the username is valid, remove the is-invalid class and add the is-valid class
+                uname.classList.remove('is-invalid');
+                uname.classList.add('is-valid');
+            }
 
-        // Validate password
-        // any non-whitespace password between 8 and 32 characters long
-        // starts with (^) a non-whitespace character and ends with ($) a non-whitespace character
-        if (pass.value.search(/^\S{8,32}$/) == -1) {
-            // if the password is invalid, add the is-invalid class and focus on the input field
-            pass.classList.add('is-invalid');
-            pass.focus();
-            // return false to prevent form submission
-            return false;
-        } else {
-            // if the password is valid, remove the is-invalid class and add the is-valid class
-            pass.classList.remove('is-invalid');
-            pass.classList.add('is-valid');
-        }
-        // return true to allow form submission
+            // Validate password
+            // any non-whitespace password between 8 and 32 characters long
+            // starts with (^) a non-whitespace character and ends with ($) a non-whitespace character
+            if (pass.value.search(/^\S{8,32}$/) == -1) {
+                // if the password is invalid, add the is-invalid class and focus on the input field
+                pass.classList.add('is-invalid');
+                pass.focus();
+                // return false to prevent form submission
+                return false;
+            } else {
+                // if the password is valid, remove the is-invalid class and add the is-valid class
+                pass.classList.remove('is-invalid');
+                pass.classList.add('is-valid');
+            }
+            // return true to allow form submission
+
+
+
         return true;
         }
+
+
+        
+
     </script>
 <body>
     
-    <?php include("shared/navbar.php"); ?>
+    <?php include("../shared/navbar.php"); ?>
+
+    
     
     <div class="container-fluid text-center w-100 p-5">
         <div class="row content ">
             <div class="container col-sm-3 text-left rounded-4 border shadow ">
-                <form id="loginForm" onsubmit="return validateForm()" class="needs-validation" method="post" action="https://httpbin.org/post" novalidate>
+                <form id="loginForm" onsubmit="return validateForm()" class="needs-validation" method="post" 
+                action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
+                 novalidate>
+
                     <div class="mt-4 mb-4">
                         <img src="/public/logo.png" width="75" alt="Logo">
                     </div>
                     <div>
                         <h1 class="">Hajz</h1>
-                        <p class="text-muted">Please enter your name & Password</p>
+                        <p class="text-muted">Please enter your Email & Password</p>
                     </div>
                     <div class="row">
                         <div class="col-1"></div>
@@ -113,9 +166,9 @@
                             <!-- Username Input -->
                             <div class="form-floating mb-3 mt-3">
                                 <input type="text" class="form-control rounded-4" name="username" id="uName" placeholder="username" required>
-                                <label for="uName" class="form-label">Name</label>
+                                <label for="uName" class="form-label">Email</label>
                                 <div class="invalid-feedback">
-                                    Please enter a valid username.
+                                    Please enter a valid Email.
                                 </div>
                             </div>
 
@@ -127,17 +180,23 @@
                                     Please enter a valid password.
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn btn-primary rounded-4 w-100">Log In</button>
+                            <button type="submit" name="login" id="submit"  class="btn btn-primary rounded-4 w-100">Log In</button>
                         </div>
                     </div>
-                    <p class="mt-3">Don't have an account? <a href="sign-in.html">Sign Up</a></p>
+                    <?php if (!empty($error_message)): ?>
+                        <p class="text-danger"><?= $error_message ?></p>
+                    <?php endif; ?>
+                    <p class="mt-3">Don't have an account? <a href="sign-in.php">Sign Up</a></p>
+                    
+                    
                 </form>
+                
             </div>
         </div>
     </div>
 
-    <?php include("shared/footer.php"); ?>
+
+    <?php include("../shared/footer.php"); ?>
     
 </body>
 </html>

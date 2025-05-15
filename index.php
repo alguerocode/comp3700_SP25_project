@@ -83,13 +83,13 @@
                     can browse upcoming events, purchase tickets securely, and receive digital passes for entry.</p>
 
                 <div class="d-flex gap-2">
-                    <a href="/events/explore.html">
+                    <a href="/events/explore.php">
                         <button class="btn"
                             style="background-color: #6518ff; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 10px; border: 2px solid #6518ff; cursor: pointer;">Get
                             Started</button>
                     </a>
 
-                    <a href="/auth/login.html">
+                    <a href="/auth/login.php">
                         <button class="btn"
                             style="background-color: #6518ff; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 10px; border: 2px solid #6518ff; cursor: pointer;">Login</button>
                     </a>

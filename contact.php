@@ -57,7 +57,7 @@
       </div>
     </form>
     <div class="w-100 d-flex" style="justify-content: center;">
-    <a href="/questionnaire.html">
+    <a href="/questionnaire.php">
     <button id="calculator-btn" class="btn my-3 w-100"
     style="background-color: #6518ff; color: white; margin:auto; max-width: 400px;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="me-4 bi bi-question-square" viewBox="0 0 16 16">
         <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
