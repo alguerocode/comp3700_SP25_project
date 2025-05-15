@@ -99,6 +99,67 @@ function main() {
 }
 
 
+// Altariq : this the update for the code 
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('insert-btn').addEventListener('click', e => {
+    e.preventDefault();
+    ticketAction('insert');
+  });
+  document.getElementById('delete-btn').addEventListener('click', e => {
+    e.preventDefault();
+    ticketAction('delete');
+  });
+  // on load, fetch existing tickets
+  ticketAction('fetch');
+});
+
+function ticketAction(action) {
+  const form  = document.getElementById('event-calculator-input');
+  const data  = new FormData(form);
+  data.append('action', action);
+  data.append('userId',   document.getElementById('user-id').value);
+  data.append('eventId',  document.getElementById('event-id').value);
+
+  fetch('ticket-action.php', { method: 'POST', body: data })
+    .then(r => r.json())
+    .then(json => {
+      if (!json.success) {
+        return alert('Error: ' + json.message);
+      }
+      renderTickets(json.tickets);
+    });
+}
+
+function renderTickets(tickets) {
+  const container = document.getElementById('user-tickets');
+  if (!tickets.length) {
+    container.innerHTML = '<p>No tickets found.</p>';
+    return;
+  }
+  let html = `
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>ID</th><th>Count</th><th>Food</th><th>VIP</th><th>Children</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+  tickets.forEach(t => {
+    html += `
+      <tr>
+        <td>${t.id}</td>
+        <td>${t.count}</td>
+        <td>${t.food_service? 'Yes':'No'}</td>
+        <td>${t.vip_tickets?  'Yes':'No'}</td>
+        <td>${t.children_tickets? 'Yes':'No'}</td>
+      </tr>
+    `;
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+// Altariq: until here 
 
 
 main();
