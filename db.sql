@@ -31,14 +31,14 @@ CREATE TABLE hz_ticket (
 
 -- Feedback Table
 CREATE TABLE hz_feedback (
-    email TEXT UNIQUE NOT NULL,
+    email TEXT NOT NULL,
     category TEXT NOT NULL,
     feedback TEXT NOT NULL, 
     rating INT NOT NULL 
 );
 
 Insert into hz_feedback (email, category, feedback, rating) VALUES
-('stest1@g.com', 'testFeedback', 'good', 5),
+('stest1@g.com', 'testFeedback', 'good', 3),
 ('stest2@g.com', 'testFeedback', 'bad', 2);
 
 -- -- drop tables ( use it if their changes in tables)
